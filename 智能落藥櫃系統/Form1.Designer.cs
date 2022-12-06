@@ -263,6 +263,7 @@
             this.rJ_Lable6 = new MyUI.RJ_Lable();
             this.sqL_DataGridView_儲位管理_藥品資料 = new SQLUI.SQL_DataGridView();
             this.rJ_GroupBox1 = new MyUI.RJ_GroupBox();
+            this.plC_Button143 = new MyUI.PLC_Button();
             this.plC_RJ_Button_儲位設定_出料一次 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_儲位設定_滅燈 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_儲位設定_亮燈 = new MyUI.PLC_RJ_Button();
@@ -504,7 +505,9 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_Button143 = new MyUI.PLC_Button();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.plC_RJ_Button_系統更新 = new MyUI.PLC_RJ_Button();
+            this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.領藥作業.SuspendLayout();
             this.rJ_GroupBox_領藥台_01.ContentsPanel.SuspendLayout();
@@ -605,6 +608,7 @@
             this.panel_系統.SuspendLayout();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
+            this.groupBox26.SuspendLayout();
             this.SuspendLayout();
             // 
             // plC_ScreenPage_Main
@@ -1329,6 +1333,7 @@
             // 後台登入
             // 
             this.後台登入.BackColor = System.Drawing.Color.White;
+            this.後台登入.Controls.Add(this.groupBox26);
             this.後台登入.Controls.Add(this.rJ_GroupBox7);
             this.後台登入.Controls.Add(this.rJ_Lable5);
             this.後台登入.Location = new System.Drawing.Point(4, 25);
@@ -6331,7 +6336,7 @@
             this.sqL_DataGridView_儲位管理_藥品資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_儲位管理_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_儲位管理_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_儲位管理_藥品資料.columnHeadersHeight = 15;
+            this.sqL_DataGridView_儲位管理_藥品資料.columnHeadersHeight = 18;
             this.sqL_DataGridView_儲位管理_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_儲位管理_藥品資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_儲位管理_藥品資料.Dock = System.Windows.Forms.DockStyle.Top;
@@ -6411,6 +6416,39 @@
             this.rJ_GroupBox1.TitleHeight = 37;
             this.rJ_GroupBox1.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_GroupBox1.TitleTexts = "儲位設定";
+            // 
+            // plC_Button143
+            // 
+            this.plC_Button143.Bool = false;
+            this.plC_Button143.but_press = false;
+            this.plC_Button143.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button143.Location = new System.Drawing.Point(988, 13);
+            this.plC_Button143.Name = "plC_Button143";
+            this.plC_Button143.OFF_文字內容 = "門鎖";
+            this.plC_Button143.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button143.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button143.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button143.ON_文字內容 = "門鎖";
+            this.plC_Button143.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button143.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button143.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button143.Size = new System.Drawing.Size(153, 62);
+            this.plC_Button143.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button143.TabIndex = 152;
+            this.plC_Button143.事件驅動 = false;
+            this.plC_Button143.字型鎖住 = false;
+            this.plC_Button143.寫入元件位置 = "M136";
+            this.plC_Button143.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button143.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button143.文字鎖住 = false;
+            this.plC_Button143.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button143.狀態OFF圖片")));
+            this.plC_Button143.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button143.狀態ON圖片")));
+            this.plC_Button143.讀取位元反向 = false;
+            this.plC_Button143.讀取元件位置 = "M136";
+            this.plC_Button143.讀寫鎖住 = false;
+            this.plC_Button143.音效 = true;
+            this.plC_Button143.顯示 = false;
+            this.plC_Button143.顯示狀態 = false;
             // 
             // plC_RJ_Button_儲位設定_出料一次
             // 
@@ -13359,38 +13397,73 @@
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
             this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
-            // plC_Button143
+            // groupBox26
             // 
-            this.plC_Button143.Bool = false;
-            this.plC_Button143.but_press = false;
-            this.plC_Button143.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button143.Location = new System.Drawing.Point(988, 13);
-            this.plC_Button143.Name = "plC_Button143";
-            this.plC_Button143.OFF_文字內容 = "門鎖";
-            this.plC_Button143.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button143.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_Button143.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button143.ON_文字內容 = "門鎖";
-            this.plC_Button143.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button143.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_Button143.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button143.Size = new System.Drawing.Size(153, 62);
-            this.plC_Button143.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_Button143.TabIndex = 152;
-            this.plC_Button143.事件驅動 = false;
-            this.plC_Button143.字型鎖住 = false;
-            this.plC_Button143.寫入元件位置 = "M136";
-            this.plC_Button143.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
-            this.plC_Button143.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_Button143.文字鎖住 = false;
-            this.plC_Button143.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button143.狀態OFF圖片")));
-            this.plC_Button143.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button143.狀態ON圖片")));
-            this.plC_Button143.讀取位元反向 = false;
-            this.plC_Button143.讀取元件位置 = "M136";
-            this.plC_Button143.讀寫鎖住 = false;
-            this.plC_Button143.音效 = true;
-            this.plC_Button143.顯示 = false;
-            this.plC_Button143.顯示狀態 = false;
+            this.groupBox26.Controls.Add(this.plC_RJ_Button_系統更新);
+            this.groupBox26.Controls.Add(this.ftp_DounloadUI);
+            this.groupBox26.Location = new System.Drawing.Point(989, 856);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Size = new System.Drawing.Size(641, 148);
+            this.groupBox26.TabIndex = 112;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "系統更新";
+            // 
+            // plC_RJ_Button_系統更新
+            // 
+            this.plC_RJ_Button_系統更新.AutoResetState = false;
+            this.plC_RJ_Button_系統更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_系統更新.Bool = false;
+            this.plC_RJ_Button_系統更新.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_系統更新.BorderRadius = 20;
+            this.plC_RJ_Button_系統更新.BorderSize = 0;
+            this.plC_RJ_Button_系統更新.but_press = false;
+            this.plC_RJ_Button_系統更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_系統更新.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_系統更新.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_系統更新.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_系統更新.Location = new System.Drawing.Point(480, 76);
+            this.plC_RJ_Button_系統更新.Name = "plC_RJ_Button_系統更新";
+            this.plC_RJ_Button_系統更新.OFF_文字內容 = "系統更新";
+            this.plC_RJ_Button_系統更新.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_系統更新.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_系統更新.ON_文字內容 = "系統更新";
+            this.plC_RJ_Button_系統更新.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_系統更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_系統更新.Size = new System.Drawing.Size(155, 61);
+            this.plC_RJ_Button_系統更新.State = false;
+            this.plC_RJ_Button_系統更新.TabIndex = 123;
+            this.plC_RJ_Button_系統更新.Text = "系統更新";
+            this.plC_RJ_Button_系統更新.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_系統更新.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_系統更新.字型鎖住 = false;
+            this.plC_RJ_Button_系統更新.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_系統更新.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_系統更新.文字鎖住 = false;
+            this.plC_RJ_Button_系統更新.致能讀取位置 = "S39019";
+            this.plC_RJ_Button_系統更新.讀取位元反向 = false;
+            this.plC_RJ_Button_系統更新.讀寫鎖住 = false;
+            this.plC_RJ_Button_系統更新.音效 = true;
+            this.plC_RJ_Button_系統更新.顯示 = false;
+            this.plC_RJ_Button_系統更新.顯示狀態 = false;
+            // 
+            // ftp_DounloadUI
+            // 
+            this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ftp_DounloadUI.FileName = "Setup.msi";
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
+            this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
+            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
+            this.ftp_DounloadUI.Location = new System.Drawing.Point(6, 26);
+            this.ftp_DounloadUI.Name = "ftp_DounloadUI";
+            this.ftp_DounloadUI.Password = "test";
+            this.ftp_DounloadUI.Password_要顯示 = false;
+            this.ftp_DounloadUI.Size = new System.Drawing.Size(431, 111);
+            this.ftp_DounloadUI.TabIndex = 12;
+            this.ftp_DounloadUI.Username = "test";
+            this.ftp_DounloadUI.Username_要顯示 = false;
             // 
             // Form1
             // 
@@ -13400,6 +13473,7 @@
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.plC_ScreenPage_Main);
             this.Controls.Add(this.panel_Main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "智能落藥櫃系統";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -13513,6 +13587,7 @@
             this.panel_系統.ResumeLayout(false);
             this.panel_Main.ResumeLayout(false);
             this.panel232.ResumeLayout(false);
+            this.groupBox26.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -13989,6 +14064,9 @@
         private MyUI.RJ_Lable rJ_Lable45;
         private System.Windows.Forms.Button button_工程模式_調劑台名稱儲存;
         private MyUI.PLC_Button plC_Button143;
+        private System.Windows.Forms.GroupBox groupBox26;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_系統更新;
+        private MyFtpUI.Ftp_DounloadUI ftp_DounloadUI;
     }
 }
 

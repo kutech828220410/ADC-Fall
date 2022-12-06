@@ -16,7 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
@@ -125,7 +126,61 @@ namespace 智能落藥櫃系統
 
         }
         #endregion
+        #region FtpConfigClass
+        private const string FtpConfigFileName = "FtpConfig.txt";
+        public FtpConfigClass ftpConfigClass = new FtpConfigClass();
+        public class FtpConfigClass
+        {
+            private string fTP_Server = "";
+            private string fTP_username = "";
+            private string fTP_password = "";
 
+            public string FTP_Server { get => fTP_Server; set => fTP_Server = value; }
+            public string FTP_username { get => fTP_username; set => fTP_username = value; }
+            public string FTP_password { get => fTP_password; set => fTP_password = value; }
+        }
+        private void LoadFtpConfig()
+        {
+            string jsonstr = MyFileStream.LoadFileAllText($".//{FtpConfigFileName}");
+            if (jsonstr.StringIsEmpty())
+            {
+                jsonstr = Basic.Net.JsonSerializationt<FtpConfigClass>(new FtpConfigClass(), true);
+                List<string> list_jsonstring = new List<string>();
+                list_jsonstring.Add(jsonstr);
+                if (!MyFileStream.SaveFile($".//{FtpConfigFileName}", list_jsonstring))
+                {
+                    MyMessageBox.ShowDialog($"建立{FtpConfigFileName}檔案失敗!");
+                }
+                MyMessageBox.ShowDialog($"未建立參數文件!請至子目錄設定{FtpConfigFileName}");
+                Application.Exit();
+            }
+            else
+            {
+                ftpConfigClass = Basic.Net.JsonDeserializet<FtpConfigClass>(jsonstr);
+
+                jsonstr = Basic.Net.JsonSerializationt<FtpConfigClass>(ftpConfigClass, true);
+                List<string> list_jsonstring = new List<string>();
+                list_jsonstring.Add(jsonstr);
+                if (!MyFileStream.SaveFile($".//{FtpConfigFileName}", list_jsonstring))
+                {
+                    MyMessageBox.ShowDialog($"建立{FtpConfigFileName}檔案失敗!");
+                }
+
+            }
+
+            this.ftp_DounloadUI.FTP_Server = ftpConfigClass.FTP_Server;
+            this.ftp_DounloadUI.Username = ftpConfigClass.FTP_username;
+            this.ftp_DounloadUI.Password = ftpConfigClass.FTP_password;
+            string updateVersion = this.ftp_DounloadUI.GetFileVersion();
+            if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
+            {
+                if (Basic.MyMessageBox.ShowDialog(string.Format("有新版本是否更新? (Ver : {0})", updateVersion), "Update", Basic.MyMessageBox.enum_BoxType.Asterisk, Basic.MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
+                {
+                    this.Invoke(new Action(delegate { this.Update(); }));
+                }
+            }
+        }
+        #endregion
         public Form1()
         {
             InitializeComponent();
@@ -135,6 +190,7 @@ namespace 智能落藥櫃系統
         {
             LoadDBConfig();
             LoadMyConfig();
+            LoadFtpConfig();
             this.stopwatch.Start();
             this.Text += "Ver" + this.ProductVersion;
             this.FormText = this.Text;
@@ -182,7 +238,11 @@ namespace 智能落藥櫃系統
             this.Program_工程模式_Init();
             this.Program_取藥堆疊資料_Init();
             this.Program_Scanner_Init();
+
+            this.plC_RJ_Button_系統更新.MouseDownEvent += PlC_RJ_Button_系統更新_MouseDownEvent;
         }
+
+     
 
         #region PLC_Method
         PLC_Device PLC_Device_Method = new PLC_Device("");
@@ -250,7 +310,27 @@ namespace 智能落藥櫃系統
 
 
         #endregion
-
-     
+        private void PlC_RJ_Button_系統更新_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Update();
+        }
+        private void Update()
+        {
+            if (this.ftp_DounloadUI.DownloadFile())
+            {
+                if (this.ftp_DounloadUI.SaveFile())
+                {
+                    this.ftp_DounloadUI.RunFile(this.FindForm());
+                }
+                else
+                {
+                    Basic.MyMessageBox.ShowDialog("安裝檔存檔失敗!");
+                }
+            }
+            else
+            {
+                Basic.MyMessageBox.ShowDialog("下載失敗!");
+            }
+        }
     }
 }
