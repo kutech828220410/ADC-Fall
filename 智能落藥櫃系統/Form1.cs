@@ -16,8 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
@@ -55,7 +55,7 @@ namespace 智能落藥櫃系統
             if (jsonstr.StringIsEmpty())
             {
 
-                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(new DBConfigClass());
+                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(new DBConfigClass(), true);
                 List<string> list_jsonstring = new List<string>();
                 list_jsonstring.Add(jsonstr);
                 if (!MyFileStream.SaveFile($".//{DBConfigFileName}", list_jsonstring))
@@ -69,7 +69,7 @@ namespace 智能落藥櫃系統
             {
                 dBConfigClass = Basic.Net.JsonDeserializet<DBConfigClass>(jsonstr);
 
-                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(dBConfigClass);
+                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(dBConfigClass, true);
                 List<string> list_jsonstring = new List<string>();
                 list_jsonstring.Add(jsonstr);
                 if (!MyFileStream.SaveFile($".//{DBConfigFileName}", list_jsonstring))
@@ -100,7 +100,7 @@ namespace 智能落藥櫃系統
             string jsonstr = MyFileStream.LoadFileAllText($".//{MyConfigFileName}");
             if (jsonstr.StringIsEmpty())
             {
-                jsonstr = Basic.Net.JsonSerializationt<MyConfigClass>(new MyConfigClass());
+                jsonstr = Basic.Net.JsonSerializationt<MyConfigClass>(new MyConfigClass(), true);
                 List<string> list_jsonstring = new List<string>();
                 list_jsonstring.Add(jsonstr);
                 if (!MyFileStream.SaveFile($".//{MyConfigFileName}", list_jsonstring))
@@ -114,7 +114,7 @@ namespace 智能落藥櫃系統
             {
                 myConfigClass = Basic.Net.JsonDeserializet<MyConfigClass>(jsonstr);
 
-                jsonstr = Basic.Net.JsonSerializationt<MyConfigClass>(myConfigClass);
+                jsonstr = Basic.Net.JsonSerializationt<MyConfigClass>(myConfigClass, true);
                 List<string> list_jsonstring = new List<string>();
                 list_jsonstring.Add(jsonstr);
                 if (!MyFileStream.SaveFile($".//{MyConfigFileName}", list_jsonstring))
