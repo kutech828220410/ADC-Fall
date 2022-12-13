@@ -81,7 +81,8 @@ namespace 智能落藥櫃系統
                         }
                         if (MyTimer_領藥台_01_閒置登出時間.IsTimeOut())
                         {
-                            this.PlC_RJ_Button_領藥台_01_登出_MouseDownEvent(new MouseEventArgs(MouseButtons.Left, 0, 0, 0, 0));
+                            PlC_RJ_Button_領藥台_01_取消作業_MouseDownEvent(null);
+                            this.PlC_RJ_Button_領藥台_01_登出_MouseDownEvent(null);
                         }
                     }
                     else
@@ -102,7 +103,7 @@ namespace 智能落藥櫃系統
                         }
                         if (MyTimer_領藥台_01_入賬完成時間.IsTimeOut())
                         {
-                            PlC_RJ_Button_領藥台_01_取消作業_MouseDownEvent(null);
+           
                         }
                     }
                     else
@@ -341,6 +342,7 @@ namespace 智能落藥櫃系統
         #endregion
         #region PLC_領藥台_01_檢查輸入資料
         private string 領藥台_01_檢查輸入資料_藥品碼 = "";
+        private PLC_Device PLC_Device_領藥台_01_已領取過藥品 = new PLC_Device();
         PLC_Device PLC_Device_領藥台_01_檢查輸入資料 = new PLC_Device("");
         PLC_Device PLC_Device_領藥台_01_檢查輸入資料_OK = new PLC_Device("");
 
@@ -386,6 +388,7 @@ namespace 智能落藥櫃系統
 
             if (cnt_Program_領藥台_01_檢查輸入資料 == 65500)
             {
+                PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 PLC_Device_領藥台_01_檢查輸入資料.Bool = false;
                 cnt_Program_領藥台_01_檢查輸入資料 = 65535;
             }
@@ -400,12 +403,11 @@ namespace 智能落藥櫃系統
         }
         void cnt_Program_領藥台_01_檢查輸入資料_初始化(ref int cnt)
         {
+            PLC_Device_領藥台_01_已領取過藥品.Bool = false;
             cnt++;
         }
         void cnt_Program_領藥台_01_檢查輸入資料_100_設定開始掃描(ref int cnt)
-        {
-          
-
+        {         
             if(!PLC_Device_Scanner_讀取藥單資料.Bool)
             {
                 PLC_Device_Scanner_讀取藥單資料.Bool = true;
@@ -499,6 +501,7 @@ namespace 智能落藥櫃系統
         }
         void cnt_Program_領藥台_01_檢查輸入資料_200_檢查取藥流程完成(ref int cnt)
         {
+            PLC_Device_領藥台_01_已領取過藥品.Bool = true;
             List<object[]> list_value = this.sqL_DataGridView_領藥台_01_領藥內容.GetAllRows();
             if (list_value.Count > 1)
             {
@@ -602,6 +605,7 @@ namespace 智能落藥櫃系統
         {
 
             this.Function_取藥堆疊子資料_設定配藥完成ByCode("P01", this.領藥台_01_檢查輸入資料_藥品碼);
+    
             cnt++;
 
 
@@ -730,32 +734,7 @@ namespace 智能落藥櫃系統
         }
         void cnt_Program_領藥台_01_刷新領藥內容_檢查是否需輸入效期(ref int cnt)
         {
-            //List<object[]> list_取藥堆疊資料 = this.Function_取藥堆疊資料_取得指定調劑台名稱母資料("P01");
-            //list_取藥堆疊資料 = list_取藥堆疊資料.GetRows((int)enum_取藥堆疊母資料.狀態, enum_取藥堆疊母資料_狀態.等待輸入效期.GetEnumName());
-
-            //string GIUD = "";
-            //for (int i = 0; i < list_取藥堆疊資料.Count; i++)
-            //{
-            //    Dialog_輸入效期 dialog = new Dialog_輸入效期();
-            //    DialogResult dialogResult = DialogResult.None;
-            //    this.Invoke(new Action(delegate
-            //    {
-            //        dialogResult = dialog.ShowDialog();
-
-            //    }));
-            //    if (dialogResult != DialogResult.Yes)
-            //    {
-            //        cnt = 65500;
-            //        return;
-            //    }
-            //    string 效期 = dialog.效期.StringToDateTime().ToDateString(TypeConvert.Enum_Year_Type.Anno_Domini, "/");
-            //    dialog.Dispose();
-            //    GIUD = list_取藥堆疊資料[i][(int)enum_取藥堆疊母資料.GUID].ObjectToString();
-            //    list_取藥堆疊資料[i][(int)enum_取藥堆疊母資料.效期] = 效期;
-            //    list_取藥堆疊資料[i][(int)enum_取藥堆疊母資料.狀態] = enum_取藥堆疊母資料_狀態.新增效期.GetEnumName();
-
-            //    this.sqL_DataGridView_取藥堆疊母資料.SQL_Replace(enum_取藥堆疊母資料.GUID.GetEnumName(), GIUD, list_取藥堆疊資料[i], false);
-            //}
+        
             cnt++;
         }
         void cnt_Program_領藥台_01_刷新領藥內容_檢查自動登出(ref int cnt)
@@ -768,7 +747,7 @@ namespace 智能落藥櫃系統
                                select value
                                 ).ToList();
 
-            if (list_取藥堆疊資料.Count == 0)
+            if (list_取藥堆疊資料.Count == 0 && !PLC_Device_領藥台_01_已領取過藥品.Bool)
             {
                 MyTimer_領藥台_01_閒置登出時間.TickStop();
                 MyTimer_領藥台_01_閒置登出時間.StartTickTime();
@@ -776,23 +755,7 @@ namespace 智能落藥櫃系統
                 MyTimer_領藥台_01_入賬完成時間.TickStop();
                 MyTimer_領藥台_01_入賬完成時間.StartTickTime();
             }
-            else
-            {
-                if (list_取藥堆疊資料_buf.Count > 0)
-                {
-                    MyTimer_領藥台_01_閒置登出時間.TickStop();
-                    MyTimer_領藥台_01_閒置登出時間.StartTickTime();
-
-                    MyTimer_領藥台_01_入賬完成時間.TickStop();
-                    MyTimer_領藥台_01_入賬完成時間.StartTickTime();
-                }
-                else
-                {
-                    MyTimer_領藥台_01_閒置登出時間.StartTickTime();
-
-                    MyTimer_領藥台_01_入賬完成時間.StartTickTime();
-                }
-            }
+           
             this.MyTimer__領藥台_01_刷新領藥內容_刷新間隔.TickStop();
             this.MyTimer__領藥台_01_刷新領藥內容_刷新間隔.StartTickTime(100);
             cnt++;

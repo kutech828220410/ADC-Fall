@@ -134,7 +134,6 @@ namespace 智能落藥櫃系統
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品資料_藥檔資料);
         }
-
   
 
         bool flag_藥品資料_藥檔資料_頁面更新 = false;
@@ -146,6 +145,8 @@ namespace 智能落藥櫃系統
                 {
                     this.Function_從SQL取得儲位到本地資料();
                     this.sqL_DataGridView_藥品群組.SQL_GetAllRows(true);
+                    this.RJ_ComboBox_藥品資料_藥檔資料_藥品群組_Enter(null, null);
+                    this.RJ_ComboBox_藥品資料_藥檔資料_資料查詢_藥品群組_Enter(null, null);
                     this.flag_藥品資料_藥檔資料_頁面更新 = true;
                 }
             }

@@ -1,1 +1,6 @@
-{"FTP_Server":"","±b±Kµn¤J_Enable":true,"RFID_COMPort":"COM1","Scanner_COMPort":"COM10"}
+{
+  "FTP_Server": "",
+  "±b±Kµn¤J_Enable": true,
+  "RFID_COMPort": "COM1",
+  "Scanner_COMPort": "COM10"
+}

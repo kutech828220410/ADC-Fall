@@ -16,8 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
@@ -188,6 +188,13 @@ namespace 智能落藥櫃系統
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MyMessageBox.form = this.FindForm();
+            Dialog_NumPannel.form = this.FindForm();
+            Dialog_輸入批號.form = this.FindForm();
+            Dialog_設定產出時間.form = this.FindForm();
+            Dialog_DateTime.form = this.FindForm();
+            Basic.MyMessageBox.音效 = false;
+
             LoadDBConfig();
             LoadMyConfig();
             LoadFtpConfig();
@@ -198,12 +205,7 @@ namespace 智能落藥櫃系統
             this.plC_UI_Init.音效 = false;
             this.plC_UI_Init.全螢幕顯示 = false;
 
-            MyMessageBox.form = this.FindForm();
-            Dialog_NumPannel.form = this.FindForm();
-            Dialog_輸入批號.form = this.FindForm();
-            Dialog_設定產出時間.form = this.FindForm();
-            Dialog_DateTime.form = this.FindForm();
-            Basic.MyMessageBox.音效 = false;
+      
 
             string ProcessName = "WINWORD";//換成想要結束的進程名字
             System.Diagnostics.Process[] MyProcess = System.Diagnostics.Process.GetProcessesByName(ProcessName);

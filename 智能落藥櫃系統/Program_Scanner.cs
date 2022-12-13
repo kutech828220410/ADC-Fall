@@ -71,9 +71,10 @@ namespace 智能落藥櫃系統
             if (cnt_Program_Scanner_讀取藥單資料 == 65535) cnt_Program_Scanner_讀取藥單資料 = 1;
             if (cnt_Program_Scanner_讀取藥單資料 == 1) cnt_Program_Scanner_讀取藥單資料_檢查按下(ref cnt_Program_Scanner_讀取藥單資料);
             if (cnt_Program_Scanner_讀取藥單資料 == 2) cnt_Program_Scanner_讀取藥單資料_初始化(ref cnt_Program_Scanner_讀取藥單資料);
-            if (cnt_Program_Scanner_讀取藥單資料 == 3) cnt_Program_Scanner_讀取藥單資料_等待接收延遲(ref cnt_Program_Scanner_讀取藥單資料);
-            if (cnt_Program_Scanner_讀取藥單資料 == 4) cnt_Program_Scanner_讀取藥單資料_檢查接收結果(ref cnt_Program_Scanner_讀取藥單資料);
-            if (cnt_Program_Scanner_讀取藥單資料 == 5) cnt_Program_Scanner_讀取藥單資料 = 65500;
+            if (cnt_Program_Scanner_讀取藥單資料 == 3) cnt_Program_Scanner_讀取藥單資料_等待有資料(ref cnt_Program_Scanner_讀取藥單資料);
+            if (cnt_Program_Scanner_讀取藥單資料 == 4) cnt_Program_Scanner_讀取藥單資料_等待接收延遲(ref cnt_Program_Scanner_讀取藥單資料);
+            if (cnt_Program_Scanner_讀取藥單資料 == 5) cnt_Program_Scanner_讀取藥單資料_檢查接收結果(ref cnt_Program_Scanner_讀取藥單資料);
+            if (cnt_Program_Scanner_讀取藥單資料 == 6) cnt_Program_Scanner_讀取藥單資料 = 65500;
             if (cnt_Program_Scanner_讀取藥單資料 > 1) cnt_Program_Scanner_讀取藥單資料_檢查放開(ref cnt_Program_Scanner_讀取藥單資料);
 
             if (cnt_Program_Scanner_讀取藥單資料 == 65500)
@@ -93,6 +94,12 @@ namespace 智能落藥櫃系統
         void cnt_Program_Scanner_讀取藥單資料_初始化(ref int cnt)
         {
             PLC_Device_Scanner_讀取藥單資料_OK.Bool = false;
+            MySerialPort_Scanner.ClearReadByte();
+            cnt++;
+        }
+        void cnt_Program_Scanner_讀取藥單資料_等待有資料(ref int cnt)
+        {
+          
             if (MySerialPort_Scanner.ReadByte() != null || plC_RJ_Button_掃碼測試.Bool)
             {
                 MyTimer_Scanner_讀取藥單資料.StartTickTime(100);
