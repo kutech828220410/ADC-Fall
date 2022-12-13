@@ -1,5 +1,5 @@
 {
-  "FTP_Server": "https://github.com/kutech828220410/ADC-Fall/blob/master/Advanced%20Installe/",
+  "FTP_Server": "https://github.com/kutech828220410/ADC-Fall/raw/master/Advanced%20Installe/",
   "FTP_username": "user",
   "FTP_password": "66437068"
 }
