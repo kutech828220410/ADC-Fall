@@ -57,6 +57,9 @@
             this.textBox_領藥台_01_帳號 = new MyUI.RJ_TextBox();
             this.textBox_領藥台_01_密碼 = new MyUI.RJ_TextBox();
             this.後台登入 = new System.Windows.Forms.TabPage();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.plC_RJ_Button_系統更新 = new MyUI.PLC_RJ_Button();
+            this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
             this.rJ_GroupBox7 = new MyUI.RJ_GroupBox();
             this.plC_RJ_Button_後台登入_登入 = new MyUI.PLC_RJ_Button();
             this.panel185 = new System.Windows.Forms.Panel();
@@ -505,9 +508,6 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.plC_RJ_Button_系統更新 = new MyUI.PLC_RJ_Button();
-            this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.領藥作業.SuspendLayout();
             this.rJ_GroupBox_領藥台_01.ContentsPanel.SuspendLayout();
@@ -518,6 +518,7 @@
             this.rJ_GroupBox5.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox5.SuspendLayout();
             this.後台登入.SuspendLayout();
+            this.groupBox26.SuspendLayout();
             this.rJ_GroupBox7.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox7.SuspendLayout();
             this.panel185.SuspendLayout();
@@ -608,7 +609,6 @@
             this.panel_系統.SuspendLayout();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
-            this.groupBox26.SuspendLayout();
             this.SuspendLayout();
             // 
             // plC_ScreenPage_Main
@@ -955,6 +955,7 @@
             this.plC_Button_領藥台_01_退.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_領藥台_01_退.狀態ON圖片")));
             this.plC_Button_領藥台_01_退.讀取位元反向 = false;
             this.plC_Button_領藥台_01_退.讀寫鎖住 = false;
+            this.plC_Button_領藥台_01_退.起始狀態 = false;
             this.plC_Button_領藥台_01_退.音效 = true;
             this.plC_Button_領藥台_01_退.顯示 = false;
             this.plC_Button_領藥台_01_退.顯示狀態 = false;
@@ -987,6 +988,7 @@
             this.plC_Button_領藥台_01_領.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_領藥台_01_領.狀態ON圖片")));
             this.plC_Button_領藥台_01_領.讀取位元反向 = false;
             this.plC_Button_領藥台_01_領.讀寫鎖住 = false;
+            this.plC_Button_領藥台_01_領.起始狀態 = false;
             this.plC_Button_領藥台_01_領.音效 = true;
             this.plC_Button_領藥台_01_領.顯示 = false;
             this.plC_Button_領藥台_01_領.顯示狀態 = false;
@@ -1341,6 +1343,75 @@
             this.後台登入.Size = new System.Drawing.Size(1638, 1012);
             this.後台登入.TabIndex = 1;
             this.後台登入.Text = "後台登入";
+            // 
+            // groupBox26
+            // 
+            this.groupBox26.Controls.Add(this.plC_RJ_Button_系統更新);
+            this.groupBox26.Controls.Add(this.ftp_DounloadUI);
+            this.groupBox26.Location = new System.Drawing.Point(989, 856);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Size = new System.Drawing.Size(641, 148);
+            this.groupBox26.TabIndex = 112;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "系統更新";
+            // 
+            // plC_RJ_Button_系統更新
+            // 
+            this.plC_RJ_Button_系統更新.AutoResetState = false;
+            this.plC_RJ_Button_系統更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_系統更新.Bool = false;
+            this.plC_RJ_Button_系統更新.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_系統更新.BorderRadius = 20;
+            this.plC_RJ_Button_系統更新.BorderSize = 0;
+            this.plC_RJ_Button_系統更新.but_press = false;
+            this.plC_RJ_Button_系統更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_系統更新.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_系統更新.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_系統更新.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_系統更新.Location = new System.Drawing.Point(480, 76);
+            this.plC_RJ_Button_系統更新.Name = "plC_RJ_Button_系統更新";
+            this.plC_RJ_Button_系統更新.OFF_文字內容 = "系統更新";
+            this.plC_RJ_Button_系統更新.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_系統更新.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_系統更新.ON_文字內容 = "系統更新";
+            this.plC_RJ_Button_系統更新.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_系統更新.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_系統更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_系統更新.Size = new System.Drawing.Size(155, 61);
+            this.plC_RJ_Button_系統更新.State = false;
+            this.plC_RJ_Button_系統更新.TabIndex = 123;
+            this.plC_RJ_Button_系統更新.Text = "系統更新";
+            this.plC_RJ_Button_系統更新.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_系統更新.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_系統更新.字型鎖住 = false;
+            this.plC_RJ_Button_系統更新.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_系統更新.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_系統更新.文字鎖住 = false;
+            this.plC_RJ_Button_系統更新.致能讀取位置 = "S39019";
+            this.plC_RJ_Button_系統更新.讀取位元反向 = false;
+            this.plC_RJ_Button_系統更新.讀寫鎖住 = false;
+            this.plC_RJ_Button_系統更新.音效 = true;
+            this.plC_RJ_Button_系統更新.顯示 = false;
+            this.plC_RJ_Button_系統更新.顯示狀態 = false;
+            // 
+            // ftp_DounloadUI
+            // 
+            this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ftp_DounloadUI.DownloadType = MyFtpUI.Ftp_DounloadUI.E_DownloadType.URL;
+            this.ftp_DounloadUI.FileName = "Setup.msi";
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
+            this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
+            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
+            this.ftp_DounloadUI.Location = new System.Drawing.Point(6, 26);
+            this.ftp_DounloadUI.Name = "ftp_DounloadUI";
+            this.ftp_DounloadUI.Password = "test";
+            this.ftp_DounloadUI.Password_要顯示 = false;
+            this.ftp_DounloadUI.Size = new System.Drawing.Size(431, 111);
+            this.ftp_DounloadUI.TabIndex = 12;
+            this.ftp_DounloadUI.Username = "test";
+            this.ftp_DounloadUI.Username_要顯示 = false;
             // 
             // rJ_GroupBox7
             // 
@@ -6446,6 +6517,7 @@
             this.plC_Button143.讀取位元反向 = false;
             this.plC_Button143.讀取元件位置 = "M136";
             this.plC_Button143.讀寫鎖住 = false;
+            this.plC_Button143.起始狀態 = false;
             this.plC_Button143.音效 = true;
             this.plC_Button143.顯示 = false;
             this.plC_Button143.顯示狀態 = false;
@@ -6730,6 +6802,8 @@
             // 
             this.plC_NumBox_儲位管理_起始號碼.Font = new System.Drawing.Font("新細明體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox_儲位管理_起始號碼.Location = new System.Drawing.Point(279, 19);
+            this.plC_NumBox_儲位管理_起始號碼.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox_儲位管理_起始號碼.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox_儲位管理_起始號碼.Name = "plC_NumBox_儲位管理_起始號碼";
             this.plC_NumBox_儲位管理_起始號碼.ReadOnly = false;
             this.plC_NumBox_儲位管理_起始號碼.Size = new System.Drawing.Size(79, 46);
@@ -6784,6 +6858,8 @@
             // 
             this.plC_NumBox_儲位管理_結束號碼.Font = new System.Drawing.Font("新細明體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox_儲位管理_結束號碼.Location = new System.Drawing.Point(505, 19);
+            this.plC_NumBox_儲位管理_結束號碼.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox_儲位管理_結束號碼.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox_儲位管理_結束號碼.Name = "plC_NumBox_儲位管理_結束號碼";
             this.plC_NumBox_儲位管理_結束號碼.ReadOnly = false;
             this.plC_NumBox_儲位管理_結束號碼.Size = new System.Drawing.Size(79, 46);
@@ -6859,6 +6935,7 @@
             this.plC_Button_取藥門關.讀取位元反向 = false;
             this.plC_Button_取藥門關.讀取元件位置 = "M117";
             this.plC_Button_取藥門關.讀寫鎖住 = false;
+            this.plC_Button_取藥門關.起始狀態 = false;
             this.plC_Button_取藥門關.音效 = true;
             this.plC_Button_取藥門關.顯示 = false;
             this.plC_Button_取藥門關.顯示狀態 = false;
@@ -6892,6 +6969,7 @@
             this.plC_Button_取藥門開.讀取位元反向 = false;
             this.plC_Button_取藥門開.讀取元件位置 = "M116";
             this.plC_Button_取藥門開.讀寫鎖住 = false;
+            this.plC_Button_取藥門開.起始狀態 = false;
             this.plC_Button_取藥門開.音效 = true;
             this.plC_Button_取藥門開.顯示 = false;
             this.plC_Button_取藥門開.顯示狀態 = false;
@@ -6925,6 +7003,7 @@
             this.plC_Button_重複領藥不檢查.讀取位元反向 = false;
             this.plC_Button_重複領藥不檢查.讀取元件位置 = "S4015";
             this.plC_Button_重複領藥不檢查.讀寫鎖住 = false;
+            this.plC_Button_重複領藥不檢查.起始狀態 = false;
             this.plC_Button_重複領藥不檢查.音效 = true;
             this.plC_Button_重複領藥不檢查.顯示 = false;
             this.plC_Button_重複領藥不檢查.顯示狀態 = false;
@@ -6952,6 +7031,8 @@
             // plC_NumBox6
             // 
             this.plC_NumBox6.Location = new System.Drawing.Point(15, 21);
+            this.plC_NumBox6.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox6.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox6.Name = "plC_NumBox6";
             this.plC_NumBox6.ReadOnly = false;
             this.plC_NumBox6.Size = new System.Drawing.Size(71, 22);
@@ -6998,6 +7079,7 @@
             this.plC_Button142.讀取位元反向 = false;
             this.plC_Button142.讀取元件位置 = "M136";
             this.plC_Button142.讀寫鎖住 = false;
+            this.plC_Button142.起始狀態 = false;
             this.plC_Button142.音效 = true;
             this.plC_Button142.顯示 = false;
             this.plC_Button142.顯示狀態 = false;
@@ -7031,6 +7113,7 @@
             this.plC_Button141.讀取位元反向 = false;
             this.plC_Button141.讀取元件位置 = "S4010";
             this.plC_Button141.讀寫鎖住 = false;
+            this.plC_Button141.起始狀態 = false;
             this.plC_Button141.音效 = true;
             this.plC_Button141.顯示 = false;
             this.plC_Button141.顯示狀態 = false;
@@ -7120,6 +7203,7 @@
             this.plC_Button127.讀取位元反向 = false;
             this.plC_Button127.讀取元件位置 = "M514";
             this.plC_Button127.讀寫鎖住 = false;
+            this.plC_Button127.起始狀態 = false;
             this.plC_Button127.音效 = true;
             this.plC_Button127.顯示 = false;
             this.plC_Button127.顯示狀態 = false;
@@ -7153,6 +7237,7 @@
             this.plC_Button128.讀取位元反向 = false;
             this.plC_Button128.讀取元件位置 = "M513";
             this.plC_Button128.讀寫鎖住 = false;
+            this.plC_Button128.起始狀態 = false;
             this.plC_Button128.音效 = true;
             this.plC_Button128.顯示 = false;
             this.plC_Button128.顯示狀態 = false;
@@ -7186,6 +7271,7 @@
             this.plC_Button129.讀取位元反向 = false;
             this.plC_Button129.讀取元件位置 = "M512";
             this.plC_Button129.讀寫鎖住 = false;
+            this.plC_Button129.起始狀態 = false;
             this.plC_Button129.音效 = true;
             this.plC_Button129.顯示 = false;
             this.plC_Button129.顯示狀態 = false;
@@ -7219,6 +7305,7 @@
             this.plC_Button130.讀取位元反向 = false;
             this.plC_Button130.讀取元件位置 = "M511";
             this.plC_Button130.讀寫鎖住 = false;
+            this.plC_Button130.起始狀態 = false;
             this.plC_Button130.音效 = true;
             this.plC_Button130.顯示 = false;
             this.plC_Button130.顯示狀態 = false;
@@ -7252,6 +7339,7 @@
             this.plC_Button131.讀取位元反向 = false;
             this.plC_Button131.讀取元件位置 = "M510";
             this.plC_Button131.讀寫鎖住 = false;
+            this.plC_Button131.起始狀態 = false;
             this.plC_Button131.音效 = true;
             this.plC_Button131.顯示 = false;
             this.plC_Button131.顯示狀態 = false;
@@ -7285,6 +7373,7 @@
             this.plC_Button132.讀取位元反向 = false;
             this.plC_Button132.讀取元件位置 = "M509";
             this.plC_Button132.讀寫鎖住 = false;
+            this.plC_Button132.起始狀態 = false;
             this.plC_Button132.音效 = true;
             this.plC_Button132.顯示 = false;
             this.plC_Button132.顯示狀態 = false;
@@ -7318,6 +7407,7 @@
             this.plC_Button133.讀取位元反向 = false;
             this.plC_Button133.讀取元件位置 = "M508";
             this.plC_Button133.讀寫鎖住 = false;
+            this.plC_Button133.起始狀態 = false;
             this.plC_Button133.音效 = true;
             this.plC_Button133.顯示 = false;
             this.plC_Button133.顯示狀態 = false;
@@ -7351,6 +7441,7 @@
             this.plC_Button134.讀取位元反向 = false;
             this.plC_Button134.讀取元件位置 = "M507";
             this.plC_Button134.讀寫鎖住 = false;
+            this.plC_Button134.起始狀態 = false;
             this.plC_Button134.音效 = true;
             this.plC_Button134.顯示 = false;
             this.plC_Button134.顯示狀態 = false;
@@ -7384,6 +7475,7 @@
             this.plC_Button135.讀取位元反向 = false;
             this.plC_Button135.讀取元件位置 = "M506";
             this.plC_Button135.讀寫鎖住 = false;
+            this.plC_Button135.起始狀態 = false;
             this.plC_Button135.音效 = true;
             this.plC_Button135.顯示 = false;
             this.plC_Button135.顯示狀態 = false;
@@ -7417,6 +7509,7 @@
             this.plC_Button136.讀取位元反向 = false;
             this.plC_Button136.讀取元件位置 = "M505";
             this.plC_Button136.讀寫鎖住 = false;
+            this.plC_Button136.起始狀態 = false;
             this.plC_Button136.音效 = true;
             this.plC_Button136.顯示 = false;
             this.plC_Button136.顯示狀態 = false;
@@ -7450,6 +7543,7 @@
             this.plC_Button137.讀取位元反向 = false;
             this.plC_Button137.讀取元件位置 = "M504";
             this.plC_Button137.讀寫鎖住 = false;
+            this.plC_Button137.起始狀態 = false;
             this.plC_Button137.音效 = true;
             this.plC_Button137.顯示 = false;
             this.plC_Button137.顯示狀態 = false;
@@ -7483,6 +7577,7 @@
             this.plC_Button138.讀取位元反向 = false;
             this.plC_Button138.讀取元件位置 = "M503";
             this.plC_Button138.讀寫鎖住 = false;
+            this.plC_Button138.起始狀態 = false;
             this.plC_Button138.音效 = true;
             this.plC_Button138.顯示 = false;
             this.plC_Button138.顯示狀態 = false;
@@ -7516,6 +7611,7 @@
             this.plC_Button139.讀取位元反向 = false;
             this.plC_Button139.讀取元件位置 = "M502";
             this.plC_Button139.讀寫鎖住 = false;
+            this.plC_Button139.起始狀態 = false;
             this.plC_Button139.音效 = true;
             this.plC_Button139.顯示 = false;
             this.plC_Button139.顯示狀態 = false;
@@ -7549,6 +7645,7 @@
             this.plC_Button140.讀取位元反向 = false;
             this.plC_Button140.讀取元件位置 = "M501";
             this.plC_Button140.讀寫鎖住 = false;
+            this.plC_Button140.起始狀態 = false;
             this.plC_Button140.音效 = true;
             this.plC_Button140.顯示 = false;
             this.plC_Button140.顯示狀態 = false;
@@ -7604,6 +7701,7 @@
             this.plC_Button113.讀取位元反向 = false;
             this.plC_Button113.讀取元件位置 = "M1514";
             this.plC_Button113.讀寫鎖住 = false;
+            this.plC_Button113.起始狀態 = false;
             this.plC_Button113.音效 = true;
             this.plC_Button113.顯示 = false;
             this.plC_Button113.顯示狀態 = false;
@@ -7637,6 +7735,7 @@
             this.plC_Button114.讀取位元反向 = false;
             this.plC_Button114.讀取元件位置 = "M1513";
             this.plC_Button114.讀寫鎖住 = false;
+            this.plC_Button114.起始狀態 = false;
             this.plC_Button114.音效 = true;
             this.plC_Button114.顯示 = false;
             this.plC_Button114.顯示狀態 = false;
@@ -7670,6 +7769,7 @@
             this.plC_Button115.讀取位元反向 = false;
             this.plC_Button115.讀取元件位置 = "M1512";
             this.plC_Button115.讀寫鎖住 = false;
+            this.plC_Button115.起始狀態 = false;
             this.plC_Button115.音效 = true;
             this.plC_Button115.顯示 = false;
             this.plC_Button115.顯示狀態 = false;
@@ -7703,6 +7803,7 @@
             this.plC_Button116.讀取位元反向 = false;
             this.plC_Button116.讀取元件位置 = "M1511";
             this.plC_Button116.讀寫鎖住 = false;
+            this.plC_Button116.起始狀態 = false;
             this.plC_Button116.音效 = true;
             this.plC_Button116.顯示 = false;
             this.plC_Button116.顯示狀態 = false;
@@ -7736,6 +7837,7 @@
             this.plC_Button117.讀取位元反向 = false;
             this.plC_Button117.讀取元件位置 = "M1510";
             this.plC_Button117.讀寫鎖住 = false;
+            this.plC_Button117.起始狀態 = false;
             this.plC_Button117.音效 = true;
             this.plC_Button117.顯示 = false;
             this.plC_Button117.顯示狀態 = false;
@@ -7769,6 +7871,7 @@
             this.plC_Button118.讀取位元反向 = false;
             this.plC_Button118.讀取元件位置 = "M1509";
             this.plC_Button118.讀寫鎖住 = false;
+            this.plC_Button118.起始狀態 = false;
             this.plC_Button118.音效 = true;
             this.plC_Button118.顯示 = false;
             this.plC_Button118.顯示狀態 = false;
@@ -7802,6 +7905,7 @@
             this.plC_Button119.讀取位元反向 = false;
             this.plC_Button119.讀取元件位置 = "M1508";
             this.plC_Button119.讀寫鎖住 = false;
+            this.plC_Button119.起始狀態 = false;
             this.plC_Button119.音效 = true;
             this.plC_Button119.顯示 = false;
             this.plC_Button119.顯示狀態 = false;
@@ -7835,6 +7939,7 @@
             this.plC_Button120.讀取位元反向 = false;
             this.plC_Button120.讀取元件位置 = "M1507";
             this.plC_Button120.讀寫鎖住 = false;
+            this.plC_Button120.起始狀態 = false;
             this.plC_Button120.音效 = true;
             this.plC_Button120.顯示 = false;
             this.plC_Button120.顯示狀態 = false;
@@ -7868,6 +7973,7 @@
             this.plC_Button121.讀取位元反向 = false;
             this.plC_Button121.讀取元件位置 = "M1506";
             this.plC_Button121.讀寫鎖住 = false;
+            this.plC_Button121.起始狀態 = false;
             this.plC_Button121.音效 = true;
             this.plC_Button121.顯示 = false;
             this.plC_Button121.顯示狀態 = false;
@@ -7901,6 +8007,7 @@
             this.plC_Button122.讀取位元反向 = false;
             this.plC_Button122.讀取元件位置 = "M1505";
             this.plC_Button122.讀寫鎖住 = false;
+            this.plC_Button122.起始狀態 = false;
             this.plC_Button122.音效 = true;
             this.plC_Button122.顯示 = false;
             this.plC_Button122.顯示狀態 = false;
@@ -7934,6 +8041,7 @@
             this.plC_Button123.讀取位元反向 = false;
             this.plC_Button123.讀取元件位置 = "M1504";
             this.plC_Button123.讀寫鎖住 = false;
+            this.plC_Button123.起始狀態 = false;
             this.plC_Button123.音效 = true;
             this.plC_Button123.顯示 = false;
             this.plC_Button123.顯示狀態 = false;
@@ -7967,6 +8075,7 @@
             this.plC_Button124.讀取位元反向 = false;
             this.plC_Button124.讀取元件位置 = "M1503";
             this.plC_Button124.讀寫鎖住 = false;
+            this.plC_Button124.起始狀態 = false;
             this.plC_Button124.音效 = true;
             this.plC_Button124.顯示 = false;
             this.plC_Button124.顯示狀態 = false;
@@ -8000,6 +8109,7 @@
             this.plC_Button125.讀取位元反向 = false;
             this.plC_Button125.讀取元件位置 = "M1502";
             this.plC_Button125.讀寫鎖住 = false;
+            this.plC_Button125.起始狀態 = false;
             this.plC_Button125.音效 = true;
             this.plC_Button125.顯示 = false;
             this.plC_Button125.顯示狀態 = false;
@@ -8033,6 +8143,7 @@
             this.plC_Button126.讀取位元反向 = false;
             this.plC_Button126.讀取元件位置 = "M1501";
             this.plC_Button126.讀寫鎖住 = false;
+            this.plC_Button126.起始狀態 = false;
             this.plC_Button126.音效 = true;
             this.plC_Button126.顯示 = false;
             this.plC_Button126.顯示狀態 = false;
@@ -8097,6 +8208,7 @@
             this.plC_Button99.讀取位元反向 = false;
             this.plC_Button99.讀取元件位置 = "M414";
             this.plC_Button99.讀寫鎖住 = false;
+            this.plC_Button99.起始狀態 = false;
             this.plC_Button99.音效 = true;
             this.plC_Button99.顯示 = false;
             this.plC_Button99.顯示狀態 = false;
@@ -8130,6 +8242,7 @@
             this.plC_Button100.讀取位元反向 = false;
             this.plC_Button100.讀取元件位置 = "M413";
             this.plC_Button100.讀寫鎖住 = false;
+            this.plC_Button100.起始狀態 = false;
             this.plC_Button100.音效 = true;
             this.plC_Button100.顯示 = false;
             this.plC_Button100.顯示狀態 = false;
@@ -8163,6 +8276,7 @@
             this.plC_Button101.讀取位元反向 = false;
             this.plC_Button101.讀取元件位置 = "M412";
             this.plC_Button101.讀寫鎖住 = false;
+            this.plC_Button101.起始狀態 = false;
             this.plC_Button101.音效 = true;
             this.plC_Button101.顯示 = false;
             this.plC_Button101.顯示狀態 = false;
@@ -8196,6 +8310,7 @@
             this.plC_Button102.讀取位元反向 = false;
             this.plC_Button102.讀取元件位置 = "M411";
             this.plC_Button102.讀寫鎖住 = false;
+            this.plC_Button102.起始狀態 = false;
             this.plC_Button102.音效 = true;
             this.plC_Button102.顯示 = false;
             this.plC_Button102.顯示狀態 = false;
@@ -8229,6 +8344,7 @@
             this.plC_Button103.讀取位元反向 = false;
             this.plC_Button103.讀取元件位置 = "M410";
             this.plC_Button103.讀寫鎖住 = false;
+            this.plC_Button103.起始狀態 = false;
             this.plC_Button103.音效 = true;
             this.plC_Button103.顯示 = false;
             this.plC_Button103.顯示狀態 = false;
@@ -8262,6 +8378,7 @@
             this.plC_Button104.讀取位元反向 = false;
             this.plC_Button104.讀取元件位置 = "M409";
             this.plC_Button104.讀寫鎖住 = false;
+            this.plC_Button104.起始狀態 = false;
             this.plC_Button104.音效 = true;
             this.plC_Button104.顯示 = false;
             this.plC_Button104.顯示狀態 = false;
@@ -8295,6 +8412,7 @@
             this.plC_Button105.讀取位元反向 = false;
             this.plC_Button105.讀取元件位置 = "M408";
             this.plC_Button105.讀寫鎖住 = false;
+            this.plC_Button105.起始狀態 = false;
             this.plC_Button105.音效 = true;
             this.plC_Button105.顯示 = false;
             this.plC_Button105.顯示狀態 = false;
@@ -8328,6 +8446,7 @@
             this.plC_Button106.讀取位元反向 = false;
             this.plC_Button106.讀取元件位置 = "M407";
             this.plC_Button106.讀寫鎖住 = false;
+            this.plC_Button106.起始狀態 = false;
             this.plC_Button106.音效 = true;
             this.plC_Button106.顯示 = false;
             this.plC_Button106.顯示狀態 = false;
@@ -8361,6 +8480,7 @@
             this.plC_Button107.讀取位元反向 = false;
             this.plC_Button107.讀取元件位置 = "M406";
             this.plC_Button107.讀寫鎖住 = false;
+            this.plC_Button107.起始狀態 = false;
             this.plC_Button107.音效 = true;
             this.plC_Button107.顯示 = false;
             this.plC_Button107.顯示狀態 = false;
@@ -8394,6 +8514,7 @@
             this.plC_Button108.讀取位元反向 = false;
             this.plC_Button108.讀取元件位置 = "M405";
             this.plC_Button108.讀寫鎖住 = false;
+            this.plC_Button108.起始狀態 = false;
             this.plC_Button108.音效 = true;
             this.plC_Button108.顯示 = false;
             this.plC_Button108.顯示狀態 = false;
@@ -8427,6 +8548,7 @@
             this.plC_Button109.讀取位元反向 = false;
             this.plC_Button109.讀取元件位置 = "M404";
             this.plC_Button109.讀寫鎖住 = false;
+            this.plC_Button109.起始狀態 = false;
             this.plC_Button109.音效 = true;
             this.plC_Button109.顯示 = false;
             this.plC_Button109.顯示狀態 = false;
@@ -8460,6 +8582,7 @@
             this.plC_Button110.讀取位元反向 = false;
             this.plC_Button110.讀取元件位置 = "M403";
             this.plC_Button110.讀寫鎖住 = false;
+            this.plC_Button110.起始狀態 = false;
             this.plC_Button110.音效 = true;
             this.plC_Button110.顯示 = false;
             this.plC_Button110.顯示狀態 = false;
@@ -8493,6 +8616,7 @@
             this.plC_Button111.讀取位元反向 = false;
             this.plC_Button111.讀取元件位置 = "M402";
             this.plC_Button111.讀寫鎖住 = false;
+            this.plC_Button111.起始狀態 = false;
             this.plC_Button111.音效 = true;
             this.plC_Button111.顯示 = false;
             this.plC_Button111.顯示狀態 = false;
@@ -8526,6 +8650,7 @@
             this.plC_Button112.讀取位元反向 = false;
             this.plC_Button112.讀取元件位置 = "M401";
             this.plC_Button112.讀寫鎖住 = false;
+            this.plC_Button112.起始狀態 = false;
             this.plC_Button112.音效 = true;
             this.plC_Button112.顯示 = false;
             this.plC_Button112.顯示狀態 = false;
@@ -8581,6 +8706,7 @@
             this.plC_Button85.讀取位元反向 = false;
             this.plC_Button85.讀取元件位置 = "M1414";
             this.plC_Button85.讀寫鎖住 = false;
+            this.plC_Button85.起始狀態 = false;
             this.plC_Button85.音效 = true;
             this.plC_Button85.顯示 = false;
             this.plC_Button85.顯示狀態 = false;
@@ -8614,6 +8740,7 @@
             this.plC_Button86.讀取位元反向 = false;
             this.plC_Button86.讀取元件位置 = "M1413";
             this.plC_Button86.讀寫鎖住 = false;
+            this.plC_Button86.起始狀態 = false;
             this.plC_Button86.音效 = true;
             this.plC_Button86.顯示 = false;
             this.plC_Button86.顯示狀態 = false;
@@ -8647,6 +8774,7 @@
             this.plC_Button87.讀取位元反向 = false;
             this.plC_Button87.讀取元件位置 = "M1412";
             this.plC_Button87.讀寫鎖住 = false;
+            this.plC_Button87.起始狀態 = false;
             this.plC_Button87.音效 = true;
             this.plC_Button87.顯示 = false;
             this.plC_Button87.顯示狀態 = false;
@@ -8680,6 +8808,7 @@
             this.plC_Button88.讀取位元反向 = false;
             this.plC_Button88.讀取元件位置 = "M1411";
             this.plC_Button88.讀寫鎖住 = false;
+            this.plC_Button88.起始狀態 = false;
             this.plC_Button88.音效 = true;
             this.plC_Button88.顯示 = false;
             this.plC_Button88.顯示狀態 = false;
@@ -8713,6 +8842,7 @@
             this.plC_Button89.讀取位元反向 = false;
             this.plC_Button89.讀取元件位置 = "M1410";
             this.plC_Button89.讀寫鎖住 = false;
+            this.plC_Button89.起始狀態 = false;
             this.plC_Button89.音效 = true;
             this.plC_Button89.顯示 = false;
             this.plC_Button89.顯示狀態 = false;
@@ -8746,6 +8876,7 @@
             this.plC_Button90.讀取位元反向 = false;
             this.plC_Button90.讀取元件位置 = "M1409";
             this.plC_Button90.讀寫鎖住 = false;
+            this.plC_Button90.起始狀態 = false;
             this.plC_Button90.音效 = true;
             this.plC_Button90.顯示 = false;
             this.plC_Button90.顯示狀態 = false;
@@ -8779,6 +8910,7 @@
             this.plC_Button91.讀取位元反向 = false;
             this.plC_Button91.讀取元件位置 = "M1408";
             this.plC_Button91.讀寫鎖住 = false;
+            this.plC_Button91.起始狀態 = false;
             this.plC_Button91.音效 = true;
             this.plC_Button91.顯示 = false;
             this.plC_Button91.顯示狀態 = false;
@@ -8812,6 +8944,7 @@
             this.plC_Button92.讀取位元反向 = false;
             this.plC_Button92.讀取元件位置 = "M1407";
             this.plC_Button92.讀寫鎖住 = false;
+            this.plC_Button92.起始狀態 = false;
             this.plC_Button92.音效 = true;
             this.plC_Button92.顯示 = false;
             this.plC_Button92.顯示狀態 = false;
@@ -8845,6 +8978,7 @@
             this.plC_Button93.讀取位元反向 = false;
             this.plC_Button93.讀取元件位置 = "M1406";
             this.plC_Button93.讀寫鎖住 = false;
+            this.plC_Button93.起始狀態 = false;
             this.plC_Button93.音效 = true;
             this.plC_Button93.顯示 = false;
             this.plC_Button93.顯示狀態 = false;
@@ -8878,6 +9012,7 @@
             this.plC_Button94.讀取位元反向 = false;
             this.plC_Button94.讀取元件位置 = "M1405";
             this.plC_Button94.讀寫鎖住 = false;
+            this.plC_Button94.起始狀態 = false;
             this.plC_Button94.音效 = true;
             this.plC_Button94.顯示 = false;
             this.plC_Button94.顯示狀態 = false;
@@ -8911,6 +9046,7 @@
             this.plC_Button95.讀取位元反向 = false;
             this.plC_Button95.讀取元件位置 = "M1404";
             this.plC_Button95.讀寫鎖住 = false;
+            this.plC_Button95.起始狀態 = false;
             this.plC_Button95.音效 = true;
             this.plC_Button95.顯示 = false;
             this.plC_Button95.顯示狀態 = false;
@@ -8944,6 +9080,7 @@
             this.plC_Button96.讀取位元反向 = false;
             this.plC_Button96.讀取元件位置 = "M1403";
             this.plC_Button96.讀寫鎖住 = false;
+            this.plC_Button96.起始狀態 = false;
             this.plC_Button96.音效 = true;
             this.plC_Button96.顯示 = false;
             this.plC_Button96.顯示狀態 = false;
@@ -8977,6 +9114,7 @@
             this.plC_Button97.讀取位元反向 = false;
             this.plC_Button97.讀取元件位置 = "M1402";
             this.plC_Button97.讀寫鎖住 = false;
+            this.plC_Button97.起始狀態 = false;
             this.plC_Button97.音效 = true;
             this.plC_Button97.顯示 = false;
             this.plC_Button97.顯示狀態 = false;
@@ -9010,6 +9148,7 @@
             this.plC_Button98.讀取位元反向 = false;
             this.plC_Button98.讀取元件位置 = "M1401";
             this.plC_Button98.讀寫鎖住 = false;
+            this.plC_Button98.起始狀態 = false;
             this.plC_Button98.音效 = true;
             this.plC_Button98.顯示 = false;
             this.plC_Button98.顯示狀態 = false;
@@ -9074,6 +9213,7 @@
             this.plC_Button71.讀取位元反向 = false;
             this.plC_Button71.讀取元件位置 = "M314";
             this.plC_Button71.讀寫鎖住 = false;
+            this.plC_Button71.起始狀態 = false;
             this.plC_Button71.音效 = true;
             this.plC_Button71.顯示 = false;
             this.plC_Button71.顯示狀態 = false;
@@ -9107,6 +9247,7 @@
             this.plC_Button72.讀取位元反向 = false;
             this.plC_Button72.讀取元件位置 = "M313";
             this.plC_Button72.讀寫鎖住 = false;
+            this.plC_Button72.起始狀態 = false;
             this.plC_Button72.音效 = true;
             this.plC_Button72.顯示 = false;
             this.plC_Button72.顯示狀態 = false;
@@ -9140,6 +9281,7 @@
             this.plC_Button73.讀取位元反向 = false;
             this.plC_Button73.讀取元件位置 = "M312";
             this.plC_Button73.讀寫鎖住 = false;
+            this.plC_Button73.起始狀態 = false;
             this.plC_Button73.音效 = true;
             this.plC_Button73.顯示 = false;
             this.plC_Button73.顯示狀態 = false;
@@ -9173,6 +9315,7 @@
             this.plC_Button74.讀取位元反向 = false;
             this.plC_Button74.讀取元件位置 = "M311";
             this.plC_Button74.讀寫鎖住 = false;
+            this.plC_Button74.起始狀態 = false;
             this.plC_Button74.音效 = true;
             this.plC_Button74.顯示 = false;
             this.plC_Button74.顯示狀態 = false;
@@ -9206,6 +9349,7 @@
             this.plC_Button75.讀取位元反向 = false;
             this.plC_Button75.讀取元件位置 = "M310";
             this.plC_Button75.讀寫鎖住 = false;
+            this.plC_Button75.起始狀態 = false;
             this.plC_Button75.音效 = true;
             this.plC_Button75.顯示 = false;
             this.plC_Button75.顯示狀態 = false;
@@ -9239,6 +9383,7 @@
             this.plC_Button76.讀取位元反向 = false;
             this.plC_Button76.讀取元件位置 = "M309";
             this.plC_Button76.讀寫鎖住 = false;
+            this.plC_Button76.起始狀態 = false;
             this.plC_Button76.音效 = true;
             this.plC_Button76.顯示 = false;
             this.plC_Button76.顯示狀態 = false;
@@ -9272,6 +9417,7 @@
             this.plC_Button77.讀取位元反向 = false;
             this.plC_Button77.讀取元件位置 = "M308";
             this.plC_Button77.讀寫鎖住 = false;
+            this.plC_Button77.起始狀態 = false;
             this.plC_Button77.音效 = true;
             this.plC_Button77.顯示 = false;
             this.plC_Button77.顯示狀態 = false;
@@ -9305,6 +9451,7 @@
             this.plC_Button78.讀取位元反向 = false;
             this.plC_Button78.讀取元件位置 = "M307";
             this.plC_Button78.讀寫鎖住 = false;
+            this.plC_Button78.起始狀態 = false;
             this.plC_Button78.音效 = true;
             this.plC_Button78.顯示 = false;
             this.plC_Button78.顯示狀態 = false;
@@ -9338,6 +9485,7 @@
             this.plC_Button79.讀取位元反向 = false;
             this.plC_Button79.讀取元件位置 = "M306";
             this.plC_Button79.讀寫鎖住 = false;
+            this.plC_Button79.起始狀態 = false;
             this.plC_Button79.音效 = true;
             this.plC_Button79.顯示 = false;
             this.plC_Button79.顯示狀態 = false;
@@ -9371,6 +9519,7 @@
             this.plC_Button80.讀取位元反向 = false;
             this.plC_Button80.讀取元件位置 = "M305";
             this.plC_Button80.讀寫鎖住 = false;
+            this.plC_Button80.起始狀態 = false;
             this.plC_Button80.音效 = true;
             this.plC_Button80.顯示 = false;
             this.plC_Button80.顯示狀態 = false;
@@ -9404,6 +9553,7 @@
             this.plC_Button81.讀取位元反向 = false;
             this.plC_Button81.讀取元件位置 = "M304";
             this.plC_Button81.讀寫鎖住 = false;
+            this.plC_Button81.起始狀態 = false;
             this.plC_Button81.音效 = true;
             this.plC_Button81.顯示 = false;
             this.plC_Button81.顯示狀態 = false;
@@ -9437,6 +9587,7 @@
             this.plC_Button82.讀取位元反向 = false;
             this.plC_Button82.讀取元件位置 = "M303";
             this.plC_Button82.讀寫鎖住 = false;
+            this.plC_Button82.起始狀態 = false;
             this.plC_Button82.音效 = true;
             this.plC_Button82.顯示 = false;
             this.plC_Button82.顯示狀態 = false;
@@ -9470,6 +9621,7 @@
             this.plC_Button83.讀取位元反向 = false;
             this.plC_Button83.讀取元件位置 = "M302";
             this.plC_Button83.讀寫鎖住 = false;
+            this.plC_Button83.起始狀態 = false;
             this.plC_Button83.音效 = true;
             this.plC_Button83.顯示 = false;
             this.plC_Button83.顯示狀態 = false;
@@ -9503,6 +9655,7 @@
             this.plC_Button84.讀取位元反向 = false;
             this.plC_Button84.讀取元件位置 = "M301";
             this.plC_Button84.讀寫鎖住 = false;
+            this.plC_Button84.起始狀態 = false;
             this.plC_Button84.音效 = true;
             this.plC_Button84.顯示 = false;
             this.plC_Button84.顯示狀態 = false;
@@ -9558,6 +9711,7 @@
             this.plC_Button57.讀取位元反向 = false;
             this.plC_Button57.讀取元件位置 = "M1314";
             this.plC_Button57.讀寫鎖住 = false;
+            this.plC_Button57.起始狀態 = false;
             this.plC_Button57.音效 = true;
             this.plC_Button57.顯示 = false;
             this.plC_Button57.顯示狀態 = false;
@@ -9591,6 +9745,7 @@
             this.plC_Button58.讀取位元反向 = false;
             this.plC_Button58.讀取元件位置 = "M1313";
             this.plC_Button58.讀寫鎖住 = false;
+            this.plC_Button58.起始狀態 = false;
             this.plC_Button58.音效 = true;
             this.plC_Button58.顯示 = false;
             this.plC_Button58.顯示狀態 = false;
@@ -9624,6 +9779,7 @@
             this.plC_Button59.讀取位元反向 = false;
             this.plC_Button59.讀取元件位置 = "M1312";
             this.plC_Button59.讀寫鎖住 = false;
+            this.plC_Button59.起始狀態 = false;
             this.plC_Button59.音效 = true;
             this.plC_Button59.顯示 = false;
             this.plC_Button59.顯示狀態 = false;
@@ -9657,6 +9813,7 @@
             this.plC_Button60.讀取位元反向 = false;
             this.plC_Button60.讀取元件位置 = "M1311";
             this.plC_Button60.讀寫鎖住 = false;
+            this.plC_Button60.起始狀態 = false;
             this.plC_Button60.音效 = true;
             this.plC_Button60.顯示 = false;
             this.plC_Button60.顯示狀態 = false;
@@ -9690,6 +9847,7 @@
             this.plC_Button61.讀取位元反向 = false;
             this.plC_Button61.讀取元件位置 = "M1310";
             this.plC_Button61.讀寫鎖住 = false;
+            this.plC_Button61.起始狀態 = false;
             this.plC_Button61.音效 = true;
             this.plC_Button61.顯示 = false;
             this.plC_Button61.顯示狀態 = false;
@@ -9723,6 +9881,7 @@
             this.plC_Button62.讀取位元反向 = false;
             this.plC_Button62.讀取元件位置 = "M1309";
             this.plC_Button62.讀寫鎖住 = false;
+            this.plC_Button62.起始狀態 = false;
             this.plC_Button62.音效 = true;
             this.plC_Button62.顯示 = false;
             this.plC_Button62.顯示狀態 = false;
@@ -9756,6 +9915,7 @@
             this.plC_Button63.讀取位元反向 = false;
             this.plC_Button63.讀取元件位置 = "M1308";
             this.plC_Button63.讀寫鎖住 = false;
+            this.plC_Button63.起始狀態 = false;
             this.plC_Button63.音效 = true;
             this.plC_Button63.顯示 = false;
             this.plC_Button63.顯示狀態 = false;
@@ -9789,6 +9949,7 @@
             this.plC_Button64.讀取位元反向 = false;
             this.plC_Button64.讀取元件位置 = "M1307";
             this.plC_Button64.讀寫鎖住 = false;
+            this.plC_Button64.起始狀態 = false;
             this.plC_Button64.音效 = true;
             this.plC_Button64.顯示 = false;
             this.plC_Button64.顯示狀態 = false;
@@ -9822,6 +9983,7 @@
             this.plC_Button65.讀取位元反向 = false;
             this.plC_Button65.讀取元件位置 = "M1306";
             this.plC_Button65.讀寫鎖住 = false;
+            this.plC_Button65.起始狀態 = false;
             this.plC_Button65.音效 = true;
             this.plC_Button65.顯示 = false;
             this.plC_Button65.顯示狀態 = false;
@@ -9855,6 +10017,7 @@
             this.plC_Button66.讀取位元反向 = false;
             this.plC_Button66.讀取元件位置 = "M1305";
             this.plC_Button66.讀寫鎖住 = false;
+            this.plC_Button66.起始狀態 = false;
             this.plC_Button66.音效 = true;
             this.plC_Button66.顯示 = false;
             this.plC_Button66.顯示狀態 = false;
@@ -9888,6 +10051,7 @@
             this.plC_Button67.讀取位元反向 = false;
             this.plC_Button67.讀取元件位置 = "M1304";
             this.plC_Button67.讀寫鎖住 = false;
+            this.plC_Button67.起始狀態 = false;
             this.plC_Button67.音效 = true;
             this.plC_Button67.顯示 = false;
             this.plC_Button67.顯示狀態 = false;
@@ -9921,6 +10085,7 @@
             this.plC_Button68.讀取位元反向 = false;
             this.plC_Button68.讀取元件位置 = "M1303";
             this.plC_Button68.讀寫鎖住 = false;
+            this.plC_Button68.起始狀態 = false;
             this.plC_Button68.音效 = true;
             this.plC_Button68.顯示 = false;
             this.plC_Button68.顯示狀態 = false;
@@ -9954,6 +10119,7 @@
             this.plC_Button69.讀取位元反向 = false;
             this.plC_Button69.讀取元件位置 = "M1302";
             this.plC_Button69.讀寫鎖住 = false;
+            this.plC_Button69.起始狀態 = false;
             this.plC_Button69.音效 = true;
             this.plC_Button69.顯示 = false;
             this.plC_Button69.顯示狀態 = false;
@@ -9987,6 +10153,7 @@
             this.plC_Button70.讀取位元反向 = false;
             this.plC_Button70.讀取元件位置 = "M1301";
             this.plC_Button70.讀寫鎖住 = false;
+            this.plC_Button70.起始狀態 = false;
             this.plC_Button70.音效 = true;
             this.plC_Button70.顯示 = false;
             this.plC_Button70.顯示狀態 = false;
@@ -10051,6 +10218,7 @@
             this.plC_Button43.讀取位元反向 = false;
             this.plC_Button43.讀取元件位置 = "M214";
             this.plC_Button43.讀寫鎖住 = false;
+            this.plC_Button43.起始狀態 = false;
             this.plC_Button43.音效 = true;
             this.plC_Button43.顯示 = false;
             this.plC_Button43.顯示狀態 = false;
@@ -10084,6 +10252,7 @@
             this.plC_Button44.讀取位元反向 = false;
             this.plC_Button44.讀取元件位置 = "M213";
             this.plC_Button44.讀寫鎖住 = false;
+            this.plC_Button44.起始狀態 = false;
             this.plC_Button44.音效 = true;
             this.plC_Button44.顯示 = false;
             this.plC_Button44.顯示狀態 = false;
@@ -10117,6 +10286,7 @@
             this.plC_Button45.讀取位元反向 = false;
             this.plC_Button45.讀取元件位置 = "M212";
             this.plC_Button45.讀寫鎖住 = false;
+            this.plC_Button45.起始狀態 = false;
             this.plC_Button45.音效 = true;
             this.plC_Button45.顯示 = false;
             this.plC_Button45.顯示狀態 = false;
@@ -10150,6 +10320,7 @@
             this.plC_Button46.讀取位元反向 = false;
             this.plC_Button46.讀取元件位置 = "M211";
             this.plC_Button46.讀寫鎖住 = false;
+            this.plC_Button46.起始狀態 = false;
             this.plC_Button46.音效 = true;
             this.plC_Button46.顯示 = false;
             this.plC_Button46.顯示狀態 = false;
@@ -10183,6 +10354,7 @@
             this.plC_Button47.讀取位元反向 = false;
             this.plC_Button47.讀取元件位置 = "M210";
             this.plC_Button47.讀寫鎖住 = false;
+            this.plC_Button47.起始狀態 = false;
             this.plC_Button47.音效 = true;
             this.plC_Button47.顯示 = false;
             this.plC_Button47.顯示狀態 = false;
@@ -10216,6 +10388,7 @@
             this.plC_Button48.讀取位元反向 = false;
             this.plC_Button48.讀取元件位置 = "M209";
             this.plC_Button48.讀寫鎖住 = false;
+            this.plC_Button48.起始狀態 = false;
             this.plC_Button48.音效 = true;
             this.plC_Button48.顯示 = false;
             this.plC_Button48.顯示狀態 = false;
@@ -10249,6 +10422,7 @@
             this.plC_Button49.讀取位元反向 = false;
             this.plC_Button49.讀取元件位置 = "M208";
             this.plC_Button49.讀寫鎖住 = false;
+            this.plC_Button49.起始狀態 = false;
             this.plC_Button49.音效 = true;
             this.plC_Button49.顯示 = false;
             this.plC_Button49.顯示狀態 = false;
@@ -10282,6 +10456,7 @@
             this.plC_Button50.讀取位元反向 = false;
             this.plC_Button50.讀取元件位置 = "M207";
             this.plC_Button50.讀寫鎖住 = false;
+            this.plC_Button50.起始狀態 = false;
             this.plC_Button50.音效 = true;
             this.plC_Button50.顯示 = false;
             this.plC_Button50.顯示狀態 = false;
@@ -10315,6 +10490,7 @@
             this.plC_Button51.讀取位元反向 = false;
             this.plC_Button51.讀取元件位置 = "M206";
             this.plC_Button51.讀寫鎖住 = false;
+            this.plC_Button51.起始狀態 = false;
             this.plC_Button51.音效 = true;
             this.plC_Button51.顯示 = false;
             this.plC_Button51.顯示狀態 = false;
@@ -10348,6 +10524,7 @@
             this.plC_Button52.讀取位元反向 = false;
             this.plC_Button52.讀取元件位置 = "M205";
             this.plC_Button52.讀寫鎖住 = false;
+            this.plC_Button52.起始狀態 = false;
             this.plC_Button52.音效 = true;
             this.plC_Button52.顯示 = false;
             this.plC_Button52.顯示狀態 = false;
@@ -10381,6 +10558,7 @@
             this.plC_Button53.讀取位元反向 = false;
             this.plC_Button53.讀取元件位置 = "M204";
             this.plC_Button53.讀寫鎖住 = false;
+            this.plC_Button53.起始狀態 = false;
             this.plC_Button53.音效 = true;
             this.plC_Button53.顯示 = false;
             this.plC_Button53.顯示狀態 = false;
@@ -10414,6 +10592,7 @@
             this.plC_Button54.讀取位元反向 = false;
             this.plC_Button54.讀取元件位置 = "M203";
             this.plC_Button54.讀寫鎖住 = false;
+            this.plC_Button54.起始狀態 = false;
             this.plC_Button54.音效 = true;
             this.plC_Button54.顯示 = false;
             this.plC_Button54.顯示狀態 = false;
@@ -10447,6 +10626,7 @@
             this.plC_Button55.讀取位元反向 = false;
             this.plC_Button55.讀取元件位置 = "M202";
             this.plC_Button55.讀寫鎖住 = false;
+            this.plC_Button55.起始狀態 = false;
             this.plC_Button55.音效 = true;
             this.plC_Button55.顯示 = false;
             this.plC_Button55.顯示狀態 = false;
@@ -10480,6 +10660,7 @@
             this.plC_Button56.讀取位元反向 = false;
             this.plC_Button56.讀取元件位置 = "M201";
             this.plC_Button56.讀寫鎖住 = false;
+            this.plC_Button56.起始狀態 = false;
             this.plC_Button56.音效 = true;
             this.plC_Button56.顯示 = false;
             this.plC_Button56.顯示狀態 = false;
@@ -10535,6 +10716,7 @@
             this.plC_Button29.讀取位元反向 = false;
             this.plC_Button29.讀取元件位置 = "M1214";
             this.plC_Button29.讀寫鎖住 = false;
+            this.plC_Button29.起始狀態 = false;
             this.plC_Button29.音效 = true;
             this.plC_Button29.顯示 = false;
             this.plC_Button29.顯示狀態 = false;
@@ -10568,6 +10750,7 @@
             this.plC_Button30.讀取位元反向 = false;
             this.plC_Button30.讀取元件位置 = "M1213";
             this.plC_Button30.讀寫鎖住 = false;
+            this.plC_Button30.起始狀態 = false;
             this.plC_Button30.音效 = true;
             this.plC_Button30.顯示 = false;
             this.plC_Button30.顯示狀態 = false;
@@ -10601,6 +10784,7 @@
             this.plC_Button31.讀取位元反向 = false;
             this.plC_Button31.讀取元件位置 = "M1212";
             this.plC_Button31.讀寫鎖住 = false;
+            this.plC_Button31.起始狀態 = false;
             this.plC_Button31.音效 = true;
             this.plC_Button31.顯示 = false;
             this.plC_Button31.顯示狀態 = false;
@@ -10634,6 +10818,7 @@
             this.plC_Button32.讀取位元反向 = false;
             this.plC_Button32.讀取元件位置 = "M1211";
             this.plC_Button32.讀寫鎖住 = false;
+            this.plC_Button32.起始狀態 = false;
             this.plC_Button32.音效 = true;
             this.plC_Button32.顯示 = false;
             this.plC_Button32.顯示狀態 = false;
@@ -10667,6 +10852,7 @@
             this.plC_Button33.讀取位元反向 = false;
             this.plC_Button33.讀取元件位置 = "M1210";
             this.plC_Button33.讀寫鎖住 = false;
+            this.plC_Button33.起始狀態 = false;
             this.plC_Button33.音效 = true;
             this.plC_Button33.顯示 = false;
             this.plC_Button33.顯示狀態 = false;
@@ -10700,6 +10886,7 @@
             this.plC_Button34.讀取位元反向 = false;
             this.plC_Button34.讀取元件位置 = "M1209";
             this.plC_Button34.讀寫鎖住 = false;
+            this.plC_Button34.起始狀態 = false;
             this.plC_Button34.音效 = true;
             this.plC_Button34.顯示 = false;
             this.plC_Button34.顯示狀態 = false;
@@ -10733,6 +10920,7 @@
             this.plC_Button35.讀取位元反向 = false;
             this.plC_Button35.讀取元件位置 = "M1208";
             this.plC_Button35.讀寫鎖住 = false;
+            this.plC_Button35.起始狀態 = false;
             this.plC_Button35.音效 = true;
             this.plC_Button35.顯示 = false;
             this.plC_Button35.顯示狀態 = false;
@@ -10766,6 +10954,7 @@
             this.plC_Button36.讀取位元反向 = false;
             this.plC_Button36.讀取元件位置 = "M1207";
             this.plC_Button36.讀寫鎖住 = false;
+            this.plC_Button36.起始狀態 = false;
             this.plC_Button36.音效 = true;
             this.plC_Button36.顯示 = false;
             this.plC_Button36.顯示狀態 = false;
@@ -10799,6 +10988,7 @@
             this.plC_Button37.讀取位元反向 = false;
             this.plC_Button37.讀取元件位置 = "M1206";
             this.plC_Button37.讀寫鎖住 = false;
+            this.plC_Button37.起始狀態 = false;
             this.plC_Button37.音效 = true;
             this.plC_Button37.顯示 = false;
             this.plC_Button37.顯示狀態 = false;
@@ -10832,6 +11022,7 @@
             this.plC_Button38.讀取位元反向 = false;
             this.plC_Button38.讀取元件位置 = "M1205";
             this.plC_Button38.讀寫鎖住 = false;
+            this.plC_Button38.起始狀態 = false;
             this.plC_Button38.音效 = true;
             this.plC_Button38.顯示 = false;
             this.plC_Button38.顯示狀態 = false;
@@ -10865,6 +11056,7 @@
             this.plC_Button39.讀取位元反向 = false;
             this.plC_Button39.讀取元件位置 = "M1204";
             this.plC_Button39.讀寫鎖住 = false;
+            this.plC_Button39.起始狀態 = false;
             this.plC_Button39.音效 = true;
             this.plC_Button39.顯示 = false;
             this.plC_Button39.顯示狀態 = false;
@@ -10898,6 +11090,7 @@
             this.plC_Button40.讀取位元反向 = false;
             this.plC_Button40.讀取元件位置 = "M1203";
             this.plC_Button40.讀寫鎖住 = false;
+            this.plC_Button40.起始狀態 = false;
             this.plC_Button40.音效 = true;
             this.plC_Button40.顯示 = false;
             this.plC_Button40.顯示狀態 = false;
@@ -10931,6 +11124,7 @@
             this.plC_Button41.讀取位元反向 = false;
             this.plC_Button41.讀取元件位置 = "M1202";
             this.plC_Button41.讀寫鎖住 = false;
+            this.plC_Button41.起始狀態 = false;
             this.plC_Button41.音效 = true;
             this.plC_Button41.顯示 = false;
             this.plC_Button41.顯示狀態 = false;
@@ -10964,6 +11158,7 @@
             this.plC_Button42.讀取位元反向 = false;
             this.plC_Button42.讀取元件位置 = "M1201";
             this.plC_Button42.讀寫鎖住 = false;
+            this.plC_Button42.起始狀態 = false;
             this.plC_Button42.音效 = true;
             this.plC_Button42.顯示 = false;
             this.plC_Button42.顯示狀態 = false;
@@ -11028,6 +11223,7 @@
             this.plC_Button27.讀取位元反向 = false;
             this.plC_Button27.讀取元件位置 = "M114";
             this.plC_Button27.讀寫鎖住 = false;
+            this.plC_Button27.起始狀態 = false;
             this.plC_Button27.音效 = true;
             this.plC_Button27.顯示 = false;
             this.plC_Button27.顯示狀態 = false;
@@ -11061,6 +11257,7 @@
             this.plC_Button25.讀取位元反向 = false;
             this.plC_Button25.讀取元件位置 = "M113";
             this.plC_Button25.讀寫鎖住 = false;
+            this.plC_Button25.起始狀態 = false;
             this.plC_Button25.音效 = true;
             this.plC_Button25.顯示 = false;
             this.plC_Button25.顯示狀態 = false;
@@ -11094,6 +11291,7 @@
             this.plC_Button23.讀取位元反向 = false;
             this.plC_Button23.讀取元件位置 = "M112";
             this.plC_Button23.讀寫鎖住 = false;
+            this.plC_Button23.起始狀態 = false;
             this.plC_Button23.音效 = true;
             this.plC_Button23.顯示 = false;
             this.plC_Button23.顯示狀態 = false;
@@ -11127,6 +11325,7 @@
             this.plC_Button13.讀取位元反向 = false;
             this.plC_Button13.讀取元件位置 = "M111";
             this.plC_Button13.讀寫鎖住 = false;
+            this.plC_Button13.起始狀態 = false;
             this.plC_Button13.音效 = true;
             this.plC_Button13.顯示 = false;
             this.plC_Button13.顯示狀態 = false;
@@ -11160,6 +11359,7 @@
             this.plC_Button15.讀取位元反向 = false;
             this.plC_Button15.讀取元件位置 = "M110";
             this.plC_Button15.讀寫鎖住 = false;
+            this.plC_Button15.起始狀態 = false;
             this.plC_Button15.音效 = true;
             this.plC_Button15.顯示 = false;
             this.plC_Button15.顯示狀態 = false;
@@ -11193,6 +11393,7 @@
             this.plC_Button17.讀取位元反向 = false;
             this.plC_Button17.讀取元件位置 = "M109";
             this.plC_Button17.讀寫鎖住 = false;
+            this.plC_Button17.起始狀態 = false;
             this.plC_Button17.音效 = true;
             this.plC_Button17.顯示 = false;
             this.plC_Button17.顯示狀態 = false;
@@ -11226,6 +11427,7 @@
             this.plC_Button19.讀取位元反向 = false;
             this.plC_Button19.讀取元件位置 = "M108";
             this.plC_Button19.讀寫鎖住 = false;
+            this.plC_Button19.起始狀態 = false;
             this.plC_Button19.音效 = true;
             this.plC_Button19.顯示 = false;
             this.plC_Button19.顯示狀態 = false;
@@ -11259,6 +11461,7 @@
             this.plC_Button21.讀取位元反向 = false;
             this.plC_Button21.讀取元件位置 = "M107";
             this.plC_Button21.讀寫鎖住 = false;
+            this.plC_Button21.起始狀態 = false;
             this.plC_Button21.音效 = true;
             this.plC_Button21.顯示 = false;
             this.plC_Button21.顯示狀態 = false;
@@ -11292,6 +11495,7 @@
             this.plC_Button11.讀取位元反向 = false;
             this.plC_Button11.讀取元件位置 = "M106";
             this.plC_Button11.讀寫鎖住 = false;
+            this.plC_Button11.起始狀態 = false;
             this.plC_Button11.音效 = true;
             this.plC_Button11.顯示 = false;
             this.plC_Button11.顯示狀態 = false;
@@ -11325,6 +11529,7 @@
             this.plC_Button9.讀取位元反向 = false;
             this.plC_Button9.讀取元件位置 = "M105";
             this.plC_Button9.讀寫鎖住 = false;
+            this.plC_Button9.起始狀態 = false;
             this.plC_Button9.音效 = true;
             this.plC_Button9.顯示 = false;
             this.plC_Button9.顯示狀態 = false;
@@ -11358,6 +11563,7 @@
             this.plC_Button7.讀取位元反向 = false;
             this.plC_Button7.讀取元件位置 = "M104";
             this.plC_Button7.讀寫鎖住 = false;
+            this.plC_Button7.起始狀態 = false;
             this.plC_Button7.音效 = true;
             this.plC_Button7.顯示 = false;
             this.plC_Button7.顯示狀態 = false;
@@ -11391,6 +11597,7 @@
             this.plC_Button5.讀取位元反向 = false;
             this.plC_Button5.讀取元件位置 = "M103";
             this.plC_Button5.讀寫鎖住 = false;
+            this.plC_Button5.起始狀態 = false;
             this.plC_Button5.音效 = true;
             this.plC_Button5.顯示 = false;
             this.plC_Button5.顯示狀態 = false;
@@ -11424,6 +11631,7 @@
             this.plC_Button3.讀取位元反向 = false;
             this.plC_Button3.讀取元件位置 = "M102";
             this.plC_Button3.讀寫鎖住 = false;
+            this.plC_Button3.起始狀態 = false;
             this.plC_Button3.音效 = true;
             this.plC_Button3.顯示 = false;
             this.plC_Button3.顯示狀態 = false;
@@ -11457,6 +11665,7 @@
             this.plC_Button2.讀取位元反向 = false;
             this.plC_Button2.讀取元件位置 = "M101";
             this.plC_Button2.讀寫鎖住 = false;
+            this.plC_Button2.起始狀態 = false;
             this.plC_Button2.音效 = true;
             this.plC_Button2.顯示 = false;
             this.plC_Button2.顯示狀態 = false;
@@ -11512,6 +11721,7 @@
             this.plC_Button28.讀取位元反向 = false;
             this.plC_Button28.讀取元件位置 = "M1114";
             this.plC_Button28.讀寫鎖住 = false;
+            this.plC_Button28.起始狀態 = false;
             this.plC_Button28.音效 = true;
             this.plC_Button28.顯示 = false;
             this.plC_Button28.顯示狀態 = false;
@@ -11545,6 +11755,7 @@
             this.plC_Button26.讀取位元反向 = false;
             this.plC_Button26.讀取元件位置 = "M1113";
             this.plC_Button26.讀寫鎖住 = false;
+            this.plC_Button26.起始狀態 = false;
             this.plC_Button26.音效 = true;
             this.plC_Button26.顯示 = false;
             this.plC_Button26.顯示狀態 = false;
@@ -11578,6 +11789,7 @@
             this.plC_Button24.讀取位元反向 = false;
             this.plC_Button24.讀取元件位置 = "M1112";
             this.plC_Button24.讀寫鎖住 = false;
+            this.plC_Button24.起始狀態 = false;
             this.plC_Button24.音效 = true;
             this.plC_Button24.顯示 = false;
             this.plC_Button24.顯示狀態 = false;
@@ -11611,6 +11823,7 @@
             this.plC_Button14.讀取位元反向 = false;
             this.plC_Button14.讀取元件位置 = "M1111";
             this.plC_Button14.讀寫鎖住 = false;
+            this.plC_Button14.起始狀態 = false;
             this.plC_Button14.音效 = true;
             this.plC_Button14.顯示 = false;
             this.plC_Button14.顯示狀態 = false;
@@ -11644,6 +11857,7 @@
             this.plC_Button16.讀取位元反向 = false;
             this.plC_Button16.讀取元件位置 = "M1110";
             this.plC_Button16.讀寫鎖住 = false;
+            this.plC_Button16.起始狀態 = false;
             this.plC_Button16.音效 = true;
             this.plC_Button16.顯示 = false;
             this.plC_Button16.顯示狀態 = false;
@@ -11677,6 +11891,7 @@
             this.plC_Button18.讀取位元反向 = false;
             this.plC_Button18.讀取元件位置 = "M1109";
             this.plC_Button18.讀寫鎖住 = false;
+            this.plC_Button18.起始狀態 = false;
             this.plC_Button18.音效 = true;
             this.plC_Button18.顯示 = false;
             this.plC_Button18.顯示狀態 = false;
@@ -11710,6 +11925,7 @@
             this.plC_Button20.讀取位元反向 = false;
             this.plC_Button20.讀取元件位置 = "M1108";
             this.plC_Button20.讀寫鎖住 = false;
+            this.plC_Button20.起始狀態 = false;
             this.plC_Button20.音效 = true;
             this.plC_Button20.顯示 = false;
             this.plC_Button20.顯示狀態 = false;
@@ -11743,6 +11959,7 @@
             this.plC_Button22.讀取位元反向 = false;
             this.plC_Button22.讀取元件位置 = "M1107";
             this.plC_Button22.讀寫鎖住 = false;
+            this.plC_Button22.起始狀態 = false;
             this.plC_Button22.音效 = true;
             this.plC_Button22.顯示 = false;
             this.plC_Button22.顯示狀態 = false;
@@ -11776,6 +11993,7 @@
             this.plC_Button12.讀取位元反向 = false;
             this.plC_Button12.讀取元件位置 = "M1106";
             this.plC_Button12.讀寫鎖住 = false;
+            this.plC_Button12.起始狀態 = false;
             this.plC_Button12.音效 = true;
             this.plC_Button12.顯示 = false;
             this.plC_Button12.顯示狀態 = false;
@@ -11809,6 +12027,7 @@
             this.plC_Button10.讀取位元反向 = false;
             this.plC_Button10.讀取元件位置 = "M1105";
             this.plC_Button10.讀寫鎖住 = false;
+            this.plC_Button10.起始狀態 = false;
             this.plC_Button10.音效 = true;
             this.plC_Button10.顯示 = false;
             this.plC_Button10.顯示狀態 = false;
@@ -11842,6 +12061,7 @@
             this.plC_Button8.讀取位元反向 = false;
             this.plC_Button8.讀取元件位置 = "M1104";
             this.plC_Button8.讀寫鎖住 = false;
+            this.plC_Button8.起始狀態 = false;
             this.plC_Button8.音效 = true;
             this.plC_Button8.顯示 = false;
             this.plC_Button8.顯示狀態 = false;
@@ -11875,6 +12095,7 @@
             this.plC_Button6.讀取位元反向 = false;
             this.plC_Button6.讀取元件位置 = "M1103";
             this.plC_Button6.讀寫鎖住 = false;
+            this.plC_Button6.起始狀態 = false;
             this.plC_Button6.音效 = true;
             this.plC_Button6.顯示 = false;
             this.plC_Button6.顯示狀態 = false;
@@ -11908,6 +12129,7 @@
             this.plC_Button4.讀取位元反向 = false;
             this.plC_Button4.讀取元件位置 = "M1102";
             this.plC_Button4.讀寫鎖住 = false;
+            this.plC_Button4.起始狀態 = false;
             this.plC_Button4.音效 = true;
             this.plC_Button4.顯示 = false;
             this.plC_Button4.顯示狀態 = false;
@@ -11941,6 +12163,7 @@
             this.plC_Button1.讀取位元反向 = false;
             this.plC_Button1.讀取元件位置 = "M1101";
             this.plC_Button1.讀寫鎖住 = false;
+            this.plC_Button1.起始狀態 = false;
             this.plC_Button1.音效 = true;
             this.plC_Button1.顯示 = false;
             this.plC_Button1.顯示狀態 = false;
@@ -13397,74 +13620,6 @@
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
             this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
-            // groupBox26
-            // 
-            this.groupBox26.Controls.Add(this.plC_RJ_Button_系統更新);
-            this.groupBox26.Controls.Add(this.ftp_DounloadUI);
-            this.groupBox26.Location = new System.Drawing.Point(989, 856);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(641, 148);
-            this.groupBox26.TabIndex = 112;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "系統更新";
-            // 
-            // plC_RJ_Button_系統更新
-            // 
-            this.plC_RJ_Button_系統更新.AutoResetState = false;
-            this.plC_RJ_Button_系統更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_系統更新.Bool = false;
-            this.plC_RJ_Button_系統更新.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_系統更新.BorderRadius = 20;
-            this.plC_RJ_Button_系統更新.BorderSize = 0;
-            this.plC_RJ_Button_系統更新.but_press = false;
-            this.plC_RJ_Button_系統更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_系統更新.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_系統更新.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_系統更新.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_系統更新.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_系統更新.Location = new System.Drawing.Point(480, 76);
-            this.plC_RJ_Button_系統更新.Name = "plC_RJ_Button_系統更新";
-            this.plC_RJ_Button_系統更新.OFF_文字內容 = "系統更新";
-            this.plC_RJ_Button_系統更新.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_系統更新.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_系統更新.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_系統更新.ON_文字內容 = "系統更新";
-            this.plC_RJ_Button_系統更新.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_系統更新.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_系統更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_系統更新.Size = new System.Drawing.Size(155, 61);
-            this.plC_RJ_Button_系統更新.State = false;
-            this.plC_RJ_Button_系統更新.TabIndex = 123;
-            this.plC_RJ_Button_系統更新.Text = "系統更新";
-            this.plC_RJ_Button_系統更新.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_系統更新.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_系統更新.字型鎖住 = false;
-            this.plC_RJ_Button_系統更新.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_系統更新.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_系統更新.文字鎖住 = false;
-            this.plC_RJ_Button_系統更新.致能讀取位置 = "S39019";
-            this.plC_RJ_Button_系統更新.讀取位元反向 = false;
-            this.plC_RJ_Button_系統更新.讀寫鎖住 = false;
-            this.plC_RJ_Button_系統更新.音效 = true;
-            this.plC_RJ_Button_系統更新.顯示 = false;
-            this.plC_RJ_Button_系統更新.顯示狀態 = false;
-            // 
-            // ftp_DounloadUI
-            // 
-            this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ftp_DounloadUI.FileName = "Setup.msi";
-            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
-            this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
-            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
-            this.ftp_DounloadUI.Location = new System.Drawing.Point(6, 26);
-            this.ftp_DounloadUI.Name = "ftp_DounloadUI";
-            this.ftp_DounloadUI.Password = "test";
-            this.ftp_DounloadUI.Password_要顯示 = false;
-            this.ftp_DounloadUI.Size = new System.Drawing.Size(431, 111);
-            this.ftp_DounloadUI.TabIndex = 12;
-            this.ftp_DounloadUI.Username = "test";
-            this.ftp_DounloadUI.Username_要顯示 = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -13487,6 +13642,7 @@
             this.rJ_GroupBox5.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox5.ResumeLayout(false);
             this.後台登入.ResumeLayout(false);
+            this.groupBox26.ResumeLayout(false);
             this.rJ_GroupBox7.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox7.ResumeLayout(false);
             this.panel185.ResumeLayout(false);
@@ -13587,7 +13743,6 @@
             this.panel_系統.ResumeLayout(false);
             this.panel_Main.ResumeLayout(false);
             this.panel232.ResumeLayout(false);
-            this.groupBox26.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
