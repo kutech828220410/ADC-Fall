@@ -283,6 +283,8 @@
             this.rJ_Lable3 = new MyUI.RJ_Lable();
             this.plC_NumBox_儲位管理_結束號碼 = new MyUI.PLC_NumBox();
             this.工程模式 = new System.Windows.Forms.TabPage();
+            this.plC_Button_下門鎖 = new MyUI.PLC_Button();
+            this.plC_Button_上門鎖 = new MyUI.PLC_Button();
             this.plC_Button_取藥門關 = new MyUI.PLC_Button();
             this.plC_Button_取藥門開 = new MyUI.PLC_Button();
             this.plC_Button_重複領藥不檢查 = new MyUI.PLC_Button();
@@ -290,7 +292,7 @@
             this.label118 = new System.Windows.Forms.Label();
             this.plC_NumBox6 = new MyUI.PLC_NumBox();
             this.plC_Button142 = new MyUI.PLC_Button();
-            this.plC_Button141 = new MyUI.PLC_Button();
+            this.plC_Button_LED全亮 = new MyUI.PLC_Button();
             this.rowsLED_Pannel_工程模式 = new H_Pannel_lib.RowsLED_Pannel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -508,6 +510,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.領藥作業.SuspendLayout();
             this.rJ_GroupBox_領藥台_01.ContentsPanel.SuspendLayout();
@@ -631,7 +634,7 @@
             this.plC_ScreenPage_Main.Location = new System.Drawing.Point(258, 0);
             this.plC_ScreenPage_Main.Name = "plC_ScreenPage_Main";
             this.plC_ScreenPage_Main.SelectedIndex = 0;
-            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1646, 1041);
+            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1646, 1015);
             this.plC_ScreenPage_Main.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_Main.TabIndex = 0;
             this.plC_ScreenPage_Main.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -644,7 +647,7 @@
             this.領藥作業.Controls.Add(this.rJ_GroupBox_領藥台_01);
             this.領藥作業.Location = new System.Drawing.Point(4, 25);
             this.領藥作業.Name = "領藥作業";
-            this.領藥作業.Size = new System.Drawing.Size(1638, 1012);
+            this.領藥作業.Size = new System.Drawing.Size(1638, 986);
             this.領藥作業.TabIndex = 0;
             this.領藥作業.Text = "領藥作業";
             // 
@@ -720,7 +723,7 @@
             this.rJ_GroupBox_領藥台_01.ContentsPanel.ForeColor = System.Drawing.Color.White;
             this.rJ_GroupBox_領藥台_01.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox_領藥台_01.ContentsPanel.Name = "ContentsPanel";
-            this.rJ_GroupBox_領藥台_01.ContentsPanel.Size = new System.Drawing.Size(826, 975);
+            this.rJ_GroupBox_領藥台_01.ContentsPanel.Size = new System.Drawing.Size(826, 949);
             this.rJ_GroupBox_領藥台_01.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox_領藥台_01.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox_領藥台_01.Location = new System.Drawing.Point(0, 0);
@@ -729,7 +732,7 @@
             this.rJ_GroupBox_領藥台_01.PannelBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox_領藥台_01.PannelBorderRadius = 5;
             this.rJ_GroupBox_領藥台_01.PannelBorderSize = 5;
-            this.rJ_GroupBox_領藥台_01.Size = new System.Drawing.Size(826, 1012);
+            this.rJ_GroupBox_領藥台_01.Size = new System.Drawing.Size(826, 986);
             this.rJ_GroupBox_領藥台_01.TabIndex = 8;
             this.rJ_GroupBox_領藥台_01.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox_領藥台_01.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -1340,7 +1343,7 @@
             this.後台登入.Controls.Add(this.rJ_Lable5);
             this.後台登入.Location = new System.Drawing.Point(4, 25);
             this.後台登入.Name = "後台登入";
-            this.後台登入.Size = new System.Drawing.Size(1638, 1012);
+            this.後台登入.Size = new System.Drawing.Size(1638, 986);
             this.後台登入.TabIndex = 1;
             this.後台登入.Text = "後台登入";
             // 
@@ -1569,7 +1572,7 @@
             this.入庫作業.BackColor = System.Drawing.Color.White;
             this.入庫作業.Location = new System.Drawing.Point(4, 25);
             this.入庫作業.Name = "入庫作業";
-            this.入庫作業.Size = new System.Drawing.Size(1638, 1012);
+            this.入庫作業.Size = new System.Drawing.Size(1638, 986);
             this.入庫作業.TabIndex = 4;
             this.入庫作業.Text = "入庫作業";
             // 
@@ -1584,7 +1587,7 @@
             this.交易記錄查詢.Controls.Add(this.sqL_DataGridView_交易記錄查詢);
             this.交易記錄查詢.Location = new System.Drawing.Point(4, 25);
             this.交易記錄查詢.Name = "交易記錄查詢";
-            this.交易記錄查詢.Size = new System.Drawing.Size(1638, 1012);
+            this.交易記錄查詢.Size = new System.Drawing.Size(1638, 986);
             this.交易記錄查詢.TabIndex = 5;
             this.交易記錄查詢.Text = "交易記錄查詢";
             // 
@@ -2544,7 +2547,7 @@
             this.醫囑資料.Controls.Add(this.sqL_DataGridView_醫囑資料);
             this.醫囑資料.Location = new System.Drawing.Point(4, 25);
             this.醫囑資料.Name = "醫囑資料";
-            this.醫囑資料.Size = new System.Drawing.Size(1638, 1012);
+            this.醫囑資料.Size = new System.Drawing.Size(1638, 986);
             this.醫囑資料.TabIndex = 6;
             this.醫囑資料.Text = "醫囑資料";
             // 
@@ -3046,7 +3049,7 @@
             this.藥品資料.Controls.Add(this.panel_藥品資料);
             this.藥品資料.Location = new System.Drawing.Point(4, 25);
             this.藥品資料.Name = "藥品資料";
-            this.藥品資料.Size = new System.Drawing.Size(1638, 1012);
+            this.藥品資料.Size = new System.Drawing.Size(1638, 986);
             this.藥品資料.TabIndex = 7;
             this.藥品資料.Text = "藥品資料";
             // 
@@ -3061,7 +3064,7 @@
             this.plC_ScreenPage_藥品資料.Location = new System.Drawing.Point(0, 51);
             this.plC_ScreenPage_藥品資料.Name = "plC_ScreenPage_藥品資料";
             this.plC_ScreenPage_藥品資料.SelectedIndex = 0;
-            this.plC_ScreenPage_藥品資料.Size = new System.Drawing.Size(1638, 961);
+            this.plC_ScreenPage_藥品資料.Size = new System.Drawing.Size(1638, 935);
             this.plC_ScreenPage_藥品資料.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_藥品資料.TabIndex = 119;
             this.plC_ScreenPage_藥品資料.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -3076,7 +3079,7 @@
             this.tabPage1.Controls.Add(this.sqL_DataGridView_藥品資料_藥檔資料);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1630, 932);
+            this.tabPage1.Size = new System.Drawing.Size(1630, 906);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "藥檔資料";
             // 
@@ -3098,7 +3101,7 @@
             this.plC_RJ_GroupBox2.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox2.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox2.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.plC_RJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(651, 395);
+            this.plC_RJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(651, 369);
             this.plC_RJ_GroupBox2.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox2.Location = new System.Drawing.Point(979, 500);
@@ -3107,7 +3110,7 @@
             this.plC_RJ_GroupBox2.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox2.PannelBorderRadius = 0;
             this.plC_RJ_GroupBox2.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox2.Size = new System.Drawing.Size(651, 432);
+            this.plC_RJ_GroupBox2.Size = new System.Drawing.Size(651, 406);
             this.plC_RJ_GroupBox2.TabIndex = 132;
             this.plC_RJ_GroupBox2.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox2.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -3296,7 +3299,7 @@
             this.sqL_DataGridView_藥品群組.RowsHeight = 25;
             this.sqL_DataGridView_藥品群組.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_藥品群組.Server = "127.0.0.0";
-            this.sqL_DataGridView_藥品群組.Size = new System.Drawing.Size(308, 385);
+            this.sqL_DataGridView_藥品群組.Size = new System.Drawing.Size(308, 359);
             this.sqL_DataGridView_藥品群組.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_藥品群組.TabIndex = 129;
             this.sqL_DataGridView_藥品群組.TableName = "medicine_group";
@@ -3336,7 +3339,7 @@
             this.rJ_GroupBox13.ContentsPanel.ForeColor = System.Drawing.Color.White;
             this.rJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
-            this.rJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(401, 395);
+            this.rJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(401, 369);
             this.rJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox13.Location = new System.Drawing.Point(578, 500);
@@ -3345,7 +3348,7 @@
             this.rJ_GroupBox13.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox13.PannelBorderRadius = 0;
             this.rJ_GroupBox13.PannelBorderSize = 2;
-            this.rJ_GroupBox13.Size = new System.Drawing.Size(401, 432);
+            this.rJ_GroupBox13.Size = new System.Drawing.Size(401, 406);
             this.rJ_GroupBox13.TabIndex = 131;
             this.rJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -3864,7 +3867,7 @@
             this.rJ_GroupBox12.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox12.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox12.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(578, 395);
+            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(578, 369);
             this.rJ_GroupBox12.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox12.Location = new System.Drawing.Point(0, 500);
@@ -3873,7 +3876,7 @@
             this.rJ_GroupBox12.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox12.PannelBorderRadius = 0;
             this.rJ_GroupBox12.PannelBorderSize = 2;
-            this.rJ_GroupBox12.Size = new System.Drawing.Size(578, 432);
+            this.rJ_GroupBox12.Size = new System.Drawing.Size(578, 406);
             this.rJ_GroupBox12.TabIndex = 130;
             this.rJ_GroupBox12.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox12.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -4529,7 +4532,7 @@
             this.人員資料.Controls.Add(this.panel_人員資料);
             this.人員資料.Location = new System.Drawing.Point(4, 25);
             this.人員資料.Name = "人員資料";
-            this.人員資料.Size = new System.Drawing.Size(1638, 1012);
+            this.人員資料.Size = new System.Drawing.Size(1638, 986);
             this.人員資料.TabIndex = 8;
             this.人員資料.Text = "人員資料";
             // 
@@ -4545,7 +4548,7 @@
             this.plC_ScreenPage_人員資料.Location = new System.Drawing.Point(0, 51);
             this.plC_ScreenPage_人員資料.Name = "plC_ScreenPage_人員資料";
             this.plC_ScreenPage_人員資料.SelectedIndex = 0;
-            this.plC_ScreenPage_人員資料.Size = new System.Drawing.Size(1638, 961);
+            this.plC_ScreenPage_人員資料.Size = new System.Drawing.Size(1638, 935);
             this.plC_ScreenPage_人員資料.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_人員資料.TabIndex = 118;
             this.plC_ScreenPage_人員資料.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -4563,7 +4566,7 @@
             this.資料維護.Controls.Add(this.plC_RJ_Button_人員資料_匯入);
             this.資料維護.Location = new System.Drawing.Point(4, 25);
             this.資料維護.Name = "資料維護";
-            this.資料維護.Size = new System.Drawing.Size(1630, 932);
+            this.資料維護.Size = new System.Drawing.Size(1630, 906);
             this.資料維護.TabIndex = 0;
             this.資料維護.Text = "資料維護";
             // 
@@ -4625,7 +4628,7 @@
             this.rJ_GroupBox15.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox15.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox15.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.rJ_GroupBox15.ContentsPanel.Size = new System.Drawing.Size(542, 381);
+            this.rJ_GroupBox15.ContentsPanel.Size = new System.Drawing.Size(542, 355);
             this.rJ_GroupBox15.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox15.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox15.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -4635,7 +4638,7 @@
             this.rJ_GroupBox15.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox15.PannelBorderRadius = 2;
             this.rJ_GroupBox15.PannelBorderSize = 2;
-            this.rJ_GroupBox15.Size = new System.Drawing.Size(542, 418);
+            this.rJ_GroupBox15.Size = new System.Drawing.Size(542, 392);
             this.rJ_GroupBox15.TabIndex = 110;
             this.rJ_GroupBox15.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox15.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -5584,7 +5587,7 @@
             this.儲位管理.Controls.Add(this.rJ_GroupBox1);
             this.儲位管理.Location = new System.Drawing.Point(4, 25);
             this.儲位管理.Name = "儲位管理";
-            this.儲位管理.Size = new System.Drawing.Size(1638, 1012);
+            this.儲位管理.Size = new System.Drawing.Size(1638, 986);
             this.儲位管理.TabIndex = 9;
             this.儲位管理.Text = "儲位管理";
             // 
@@ -5606,7 +5609,7 @@
             this.rJ_GroupBox3.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox3.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox3.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(939, 675);
+            this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(939, 649);
             this.rJ_GroupBox3.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox3.Location = new System.Drawing.Point(699, 300);
@@ -5615,7 +5618,7 @@
             this.rJ_GroupBox3.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox3.PannelBorderRadius = 5;
             this.rJ_GroupBox3.PannelBorderSize = 2;
-            this.rJ_GroupBox3.Size = new System.Drawing.Size(939, 712);
+            this.rJ_GroupBox3.Size = new System.Drawing.Size(939, 686);
             this.rJ_GroupBox3.TabIndex = 8;
             this.rJ_GroupBox3.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox3.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -5645,7 +5648,7 @@
             this.plC_RJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(582, 167);
+            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(582, 141);
             this.plC_RJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Left;
             this.plC_RJ_GroupBox13.Location = new System.Drawing.Point(5, 466);
@@ -5654,7 +5657,7 @@
             this.plC_RJ_GroupBox13.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox13.PannelBorderRadius = 5;
             this.plC_RJ_GroupBox13.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(582, 204);
+            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(582, 178);
             this.plC_RJ_GroupBox13.TabIndex = 139;
             this.plC_RJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -5824,7 +5827,7 @@
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.RowsHeight = 40;
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.Server = "127.0.0.0";
-            this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.Size = new System.Drawing.Size(452, 157);
+            this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.Size = new System.Drawing.Size(452, 131);
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.TabIndex = 0;
             this.sqL_DataGridView_儲位管理_儲位資訊_效期及庫存.UserName = "root";
@@ -5999,7 +6002,7 @@
             this.rJ_GroupBox2.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox2.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox2.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(699, 675);
+            this.rJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(699, 649);
             this.rJ_GroupBox2.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox2.Location = new System.Drawing.Point(0, 300);
@@ -6008,7 +6011,7 @@
             this.rJ_GroupBox2.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox2.PannelBorderRadius = 5;
             this.rJ_GroupBox2.PannelBorderSize = 2;
-            this.rJ_GroupBox2.Size = new System.Drawing.Size(699, 712);
+            this.rJ_GroupBox2.Size = new System.Drawing.Size(699, 686);
             this.rJ_GroupBox2.TabIndex = 7;
             this.rJ_GroupBox2.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox2.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -6877,12 +6880,14 @@
             // 工程模式
             // 
             this.工程模式.BackColor = System.Drawing.Color.White;
+            this.工程模式.Controls.Add(this.plC_Button_下門鎖);
+            this.工程模式.Controls.Add(this.plC_Button_上門鎖);
             this.工程模式.Controls.Add(this.plC_Button_取藥門關);
             this.工程模式.Controls.Add(this.plC_Button_取藥門開);
             this.工程模式.Controls.Add(this.plC_Button_重複領藥不檢查);
             this.工程模式.Controls.Add(this.groupBox19);
             this.工程模式.Controls.Add(this.plC_Button142);
-            this.工程模式.Controls.Add(this.plC_Button141);
+            this.工程模式.Controls.Add(this.plC_Button_LED全亮);
             this.工程模式.Controls.Add(this.rowsLED_Pannel_工程模式);
             this.工程模式.Controls.Add(this.panel16);
             this.工程模式.Controls.Add(this.panel15);
@@ -6902,9 +6907,73 @@
             this.工程模式.Controls.Add(this.plC_RJ_ScreenButton9);
             this.工程模式.Location = new System.Drawing.Point(4, 25);
             this.工程模式.Name = "工程模式";
-            this.工程模式.Size = new System.Drawing.Size(1638, 1012);
+            this.工程模式.Size = new System.Drawing.Size(1638, 986);
             this.工程模式.TabIndex = 2;
             this.工程模式.Text = "工程模式";
+            // 
+            // plC_Button_下門鎖
+            // 
+            this.plC_Button_下門鎖.Bool = false;
+            this.plC_Button_下門鎖.but_press = false;
+            this.plC_Button_下門鎖.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_下門鎖.Location = new System.Drawing.Point(1603, 95);
+            this.plC_Button_下門鎖.Name = "plC_Button_下門鎖";
+            this.plC_Button_下門鎖.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_下門鎖.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_下門鎖.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_下門鎖.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_下門鎖.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_下門鎖.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_下門鎖.Size = new System.Drawing.Size(22, 21);
+            this.plC_Button_下門鎖.Style = MyUI.PLC_Button.StyleEnum.Lamp_綠;
+            this.plC_Button_下門鎖.TabIndex = 157;
+            this.plC_Button_下門鎖.事件驅動 = false;
+            this.plC_Button_下門鎖.字型鎖住 = false;
+            this.plC_Button_下門鎖.寫入元件位置 = "X22";
+            this.plC_Button_下門鎖.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button_下門鎖.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_下門鎖.文字鎖住 = false;
+            this.plC_Button_下門鎖.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_下門鎖.狀態OFF圖片")));
+            this.plC_Button_下門鎖.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_下門鎖.狀態ON圖片")));
+            this.plC_Button_下門鎖.讀取位元反向 = false;
+            this.plC_Button_下門鎖.讀取元件位置 = "X22";
+            this.plC_Button_下門鎖.讀寫鎖住 = false;
+            this.plC_Button_下門鎖.起始狀態 = false;
+            this.plC_Button_下門鎖.音效 = true;
+            this.plC_Button_下門鎖.顯示 = false;
+            this.plC_Button_下門鎖.顯示狀態 = false;
+            // 
+            // plC_Button_上門鎖
+            // 
+            this.plC_Button_上門鎖.Bool = false;
+            this.plC_Button_上門鎖.but_press = false;
+            this.plC_Button_上門鎖.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_上門鎖.Location = new System.Drawing.Point(1603, 68);
+            this.plC_Button_上門鎖.Name = "plC_Button_上門鎖";
+            this.plC_Button_上門鎖.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_上門鎖.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_上門鎖.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_上門鎖.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_上門鎖.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_上門鎖.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_上門鎖.Size = new System.Drawing.Size(22, 21);
+            this.plC_Button_上門鎖.Style = MyUI.PLC_Button.StyleEnum.Lamp_綠;
+            this.plC_Button_上門鎖.TabIndex = 156;
+            this.plC_Button_上門鎖.事件驅動 = false;
+            this.plC_Button_上門鎖.字型鎖住 = false;
+            this.plC_Button_上門鎖.寫入元件位置 = "X21";
+            this.plC_Button_上門鎖.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button_上門鎖.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_上門鎖.文字鎖住 = false;
+            this.plC_Button_上門鎖.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_上門鎖.狀態OFF圖片")));
+            this.plC_Button_上門鎖.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_上門鎖.狀態ON圖片")));
+            this.plC_Button_上門鎖.讀取位元反向 = false;
+            this.plC_Button_上門鎖.讀取元件位置 = "X21";
+            this.plC_Button_上門鎖.讀寫鎖住 = false;
+            this.plC_Button_上門鎖.起始狀態 = false;
+            this.plC_Button_上門鎖.音效 = true;
+            this.plC_Button_上門鎖.顯示 = false;
+            this.plC_Button_上門鎖.顯示狀態 = false;
             // 
             // plC_Button_取藥門關
             // 
@@ -7084,39 +7153,39 @@
             this.plC_Button142.顯示 = false;
             this.plC_Button142.顯示狀態 = false;
             // 
-            // plC_Button141
+            // plC_Button_LED全亮
             // 
-            this.plC_Button141.Bool = false;
-            this.plC_Button141.but_press = false;
-            this.plC_Button141.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button141.Location = new System.Drawing.Point(1313, 118);
-            this.plC_Button141.Name = "plC_Button141";
-            this.plC_Button141.OFF_文字內容 = "LED全亮";
-            this.plC_Button141.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button141.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_Button141.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button141.ON_文字內容 = "LED全亮";
-            this.plC_Button141.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button141.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_Button141.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button141.Size = new System.Drawing.Size(153, 62);
-            this.plC_Button141.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_Button141.TabIndex = 150;
-            this.plC_Button141.事件驅動 = false;
-            this.plC_Button141.字型鎖住 = false;
-            this.plC_Button141.寫入元件位置 = "S4010";
-            this.plC_Button141.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
-            this.plC_Button141.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_Button141.文字鎖住 = false;
-            this.plC_Button141.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button141.狀態OFF圖片")));
-            this.plC_Button141.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button141.狀態ON圖片")));
-            this.plC_Button141.讀取位元反向 = false;
-            this.plC_Button141.讀取元件位置 = "S4010";
-            this.plC_Button141.讀寫鎖住 = false;
-            this.plC_Button141.起始狀態 = false;
-            this.plC_Button141.音效 = true;
-            this.plC_Button141.顯示 = false;
-            this.plC_Button141.顯示狀態 = false;
+            this.plC_Button_LED全亮.Bool = false;
+            this.plC_Button_LED全亮.but_press = false;
+            this.plC_Button_LED全亮.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_LED全亮.Location = new System.Drawing.Point(1313, 118);
+            this.plC_Button_LED全亮.Name = "plC_Button_LED全亮";
+            this.plC_Button_LED全亮.OFF_文字內容 = "LED全亮";
+            this.plC_Button_LED全亮.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_LED全亮.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_LED全亮.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_LED全亮.ON_文字內容 = "LED全亮";
+            this.plC_Button_LED全亮.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_LED全亮.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_LED全亮.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_LED全亮.Size = new System.Drawing.Size(153, 62);
+            this.plC_Button_LED全亮.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button_LED全亮.TabIndex = 150;
+            this.plC_Button_LED全亮.事件驅動 = false;
+            this.plC_Button_LED全亮.字型鎖住 = false;
+            this.plC_Button_LED全亮.寫入元件位置 = "S4010";
+            this.plC_Button_LED全亮.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button_LED全亮.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_LED全亮.文字鎖住 = false;
+            this.plC_Button_LED全亮.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_LED全亮.狀態OFF圖片")));
+            this.plC_Button_LED全亮.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_LED全亮.狀態ON圖片")));
+            this.plC_Button_LED全亮.讀取位元反向 = false;
+            this.plC_Button_LED全亮.讀取元件位置 = "S4010";
+            this.plC_Button_LED全亮.讀寫鎖住 = false;
+            this.plC_Button_LED全亮.起始狀態 = false;
+            this.plC_Button_LED全亮.音效 = true;
+            this.plC_Button_LED全亮.顯示 = false;
+            this.plC_Button_LED全亮.顯示狀態 = false;
             // 
             // rowsLED_Pannel_工程模式
             // 
@@ -7147,7 +7216,7 @@
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel16.Location = new System.Drawing.Point(0, 197);
+            this.panel16.Location = new System.Drawing.Point(0, 171);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1638, 17);
             this.panel16.TabIndex = 95;
@@ -7169,7 +7238,7 @@
             this.panel15.Controls.Add(this.plC_Button139);
             this.panel15.Controls.Add(this.plC_Button140);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 214);
+            this.panel15.Location = new System.Drawing.Point(0, 188);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1638, 73);
             this.panel15.TabIndex = 94;
@@ -7667,7 +7736,7 @@
             this.panel14.Controls.Add(this.plC_Button125);
             this.panel14.Controls.Add(this.plC_Button126);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(0, 287);
+            this.panel14.Location = new System.Drawing.Point(0, 261);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1638, 73);
             this.panel14.TabIndex = 93;
@@ -8152,7 +8221,7 @@
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(0, 360);
+            this.panel13.Location = new System.Drawing.Point(0, 334);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1638, 17);
             this.panel13.TabIndex = 92;
@@ -8174,7 +8243,7 @@
             this.panel12.Controls.Add(this.plC_Button111);
             this.panel12.Controls.Add(this.plC_Button112);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 377);
+            this.panel12.Location = new System.Drawing.Point(0, 351);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1638, 73);
             this.panel12.TabIndex = 91;
@@ -8672,7 +8741,7 @@
             this.panel11.Controls.Add(this.plC_Button97);
             this.panel11.Controls.Add(this.plC_Button98);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 450);
+            this.panel11.Location = new System.Drawing.Point(0, 424);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1638, 73);
             this.panel11.TabIndex = 90;
@@ -9157,7 +9226,7 @@
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 523);
+            this.panel10.Location = new System.Drawing.Point(0, 497);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1638, 17);
             this.panel10.TabIndex = 89;
@@ -9179,7 +9248,7 @@
             this.panel9.Controls.Add(this.plC_Button83);
             this.panel9.Controls.Add(this.plC_Button84);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 540);
+            this.panel9.Location = new System.Drawing.Point(0, 514);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1638, 73);
             this.panel9.TabIndex = 88;
@@ -9677,7 +9746,7 @@
             this.panel8.Controls.Add(this.plC_Button69);
             this.panel8.Controls.Add(this.plC_Button70);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 613);
+            this.panel8.Location = new System.Drawing.Point(0, 587);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1638, 73);
             this.panel8.TabIndex = 87;
@@ -10162,7 +10231,7 @@
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 686);
+            this.panel7.Location = new System.Drawing.Point(0, 660);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1638, 17);
             this.panel7.TabIndex = 86;
@@ -10184,7 +10253,7 @@
             this.panel6.Controls.Add(this.plC_Button55);
             this.panel6.Controls.Add(this.plC_Button56);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 703);
+            this.panel6.Location = new System.Drawing.Point(0, 677);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1638, 73);
             this.panel6.TabIndex = 85;
@@ -10682,7 +10751,7 @@
             this.panel5.Controls.Add(this.plC_Button41);
             this.panel5.Controls.Add(this.plC_Button42);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 776);
+            this.panel5.Location = new System.Drawing.Point(0, 750);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1638, 73);
             this.panel5.TabIndex = 84;
@@ -11167,7 +11236,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 849);
+            this.panel4.Location = new System.Drawing.Point(0, 823);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1638, 17);
             this.panel4.TabIndex = 83;
@@ -11189,7 +11258,7 @@
             this.panel3.Controls.Add(this.plC_Button3);
             this.panel3.Controls.Add(this.plC_Button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 866);
+            this.panel3.Location = new System.Drawing.Point(0, 840);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1638, 73);
             this.panel3.TabIndex = 82;
@@ -11687,7 +11756,7 @@
             this.panel1.Controls.Add(this.plC_Button4);
             this.panel1.Controls.Add(this.plC_Button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 939);
+            this.panel1.Location = new System.Drawing.Point(0, 913);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1638, 73);
             this.panel1.TabIndex = 81;
@@ -12213,7 +12282,7 @@
             this.系統.Controls.Add(this.panel_系統);
             this.系統.Location = new System.Drawing.Point(4, 25);
             this.系統.Name = "系統";
-            this.系統.Size = new System.Drawing.Size(1638, 1012);
+            this.系統.Size = new System.Drawing.Size(1638, 986);
             this.系統.TabIndex = 3;
             this.系統.Text = "系統";
             // 
@@ -12233,7 +12302,7 @@
             this.plC_ScreenPage_系統.Location = new System.Drawing.Point(0, 51);
             this.plC_ScreenPage_系統.Name = "plC_ScreenPage_系統";
             this.plC_ScreenPage_系統.SelectedIndex = 0;
-            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1638, 961);
+            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1638, 935);
             this.plC_ScreenPage_系統.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_系統.TabIndex = 117;
             this.plC_ScreenPage_系統.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -12249,7 +12318,7 @@
             this.設定01.Controls.Add(this.lowerMachine_Panel);
             this.設定01.Location = new System.Drawing.Point(4, 25);
             this.設定01.Name = "設定01";
-            this.設定01.Size = new System.Drawing.Size(1630, 932);
+            this.設定01.Size = new System.Drawing.Size(1630, 906);
             this.設定01.TabIndex = 0;
             this.設定01.Text = "設定01";
             // 
@@ -13049,7 +13118,7 @@
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Main.Location = new System.Drawing.Point(0, 0);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(258, 1041);
+            this.panel_Main.Size = new System.Drawing.Size(258, 1015);
             this.panel_Main.TabIndex = 4;
             // 
             // plC_RJ_ScreenButton_工程模式
@@ -13419,7 +13488,7 @@
             this.panel232.Controls.Add(this.rJ_Lable52);
             this.panel232.Controls.Add(this.plC_RJ_Button_後台登入_登出);
             this.panel232.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel232.Location = new System.Drawing.Point(0, 887);
+            this.panel232.Location = new System.Drawing.Point(0, 861);
             this.panel232.Name = "panel232";
             this.panel232.Size = new System.Drawing.Size(258, 73);
             this.panel232.TabIndex = 93;
@@ -13577,7 +13646,7 @@
             this.plC_RJ_ScreenButton143.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.plC_RJ_ScreenButton143.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.plC_RJ_ScreenButton143.IconSize = 40;
-            this.plC_RJ_ScreenButton143.Location = new System.Drawing.Point(0, 960);
+            this.plC_RJ_ScreenButton143.Location = new System.Drawing.Point(0, 934);
             this.plC_RJ_ScreenButton143.Margin = new System.Windows.Forms.Padding(0);
             this.plC_RJ_ScreenButton143.Name = "plC_RJ_ScreenButton143";
             this.plC_RJ_ScreenButton143.OffBackColor = System.Drawing.Color.CornflowerBlue;
@@ -13620,6 +13689,21 @@
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
             this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
+            // plC_AlarmFlow1
+            // 
+            this.plC_AlarmFlow1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plC_AlarmFlow1.Location = new System.Drawing.Point(0, 1015);
+            this.plC_AlarmFlow1.Name = "plC_AlarmFlow1";
+            this.plC_AlarmFlow1.Size = new System.Drawing.Size(1904, 26);
+            this.plC_AlarmFlow1.TabIndex = 124;
+            this.plC_AlarmFlow1.Visible = false;
+            this.plC_AlarmFlow1.捲動速度 = 200;
+            this.plC_AlarmFlow1.文字字體 = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_AlarmFlow1.文字顏色 = System.Drawing.Color.White;
+            this.plC_AlarmFlow1.自動隱藏 = false;
+            this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
+            this.plC_AlarmFlow1.顯示警報編號 = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -13628,6 +13712,7 @@
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.plC_ScreenPage_Main);
             this.Controls.Add(this.panel_Main);
+            this.Controls.Add(this.plC_AlarmFlow1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "智能落藥櫃系統";
@@ -14205,7 +14290,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_儲位設定_亮燈;
         private MyUI.PLC_RJ_Button plC_RJ_Button_儲位設定_滅燈;
         private MyUI.PLC_RJ_Button plC_RJ_Button_儲位設定_出料一次;
-        private MyUI.PLC_Button plC_Button141;
+        private MyUI.PLC_Button plC_Button_LED全亮;
         private MyUI.PLC_Button plC_Button142;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Label label118;
@@ -14222,6 +14307,9 @@
         private System.Windows.Forms.GroupBox groupBox26;
         private MyUI.PLC_RJ_Button plC_RJ_Button_系統更新;
         private MyFtpUI.Ftp_DounloadUI ftp_DounloadUI;
+        private MyUI.PLC_Button plC_Button_下門鎖;
+        private MyUI.PLC_Button plC_Button_上門鎖;
+        private MyUI.PLC_AlarmFlow plC_AlarmFlow1;
     }
 }
 

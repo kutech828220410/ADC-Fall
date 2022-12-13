@@ -16,8 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.5.0")]
-[assembly: AssemblyFileVersion("1.0.5.0")]
+[assembly: AssemblyVersion("1.0.7.0")]
+[assembly: AssemblyFileVersion("1.0.7.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
@@ -240,6 +240,8 @@ namespace 智能落藥櫃系統
             this.Program_工程模式_Init();
             this.Program_取藥堆疊資料_Init();
             this.Program_Scanner_Init();
+
+            this.plC_UI_Init.Add_Method(sub_Program_門未關閉警示);
 
             this.plC_RJ_Button_系統更新.MouseDownEvent += PlC_RJ_Button_系統更新_MouseDownEvent;
         }

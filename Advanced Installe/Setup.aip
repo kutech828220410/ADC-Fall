@@ -11,10 +11,10 @@
     <ROW Property="AiSkipExitDlg" Value="1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="力翔精密機械有限公司"/>
-    <ROW Property="ProductCode" Value="1028:{5F1C2A6A-8BC6-479E-9407-FD0FA26445D7} " Type="16"/>
+    <ROW Property="ProductCode" Value="1028:{C6C511C4-46E5-4DF7-ACC6-366EFB03200C} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能落藥櫃系統 [|ProductVersion]"/>
-    <ROW Property="ProductVersion" Value="1.0.5.0" Type="32" TargetFile="_.exe"/>
+    <ROW Property="ProductVersion" Value="1.0.7.0" Type="32" TargetFile="_.exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{43158617-D359-4368-912D-D1B1DFE50B82}"/>
