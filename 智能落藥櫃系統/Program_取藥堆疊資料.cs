@@ -1508,7 +1508,15 @@ namespace 智能落藥櫃系統
             //    list_value[0][(int)enum_醫囑資料.過帳時間] = DateTime.Now.ToDateTimeString_6();
             //    list_醫囑資料_ReplaceValue.Add(list_value[0]);
             //}
-//if (list_交易紀錄新增資料_AddValue.Count > 0) this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄新增資料_AddValue, false);
+            try
+            {
+                if (list_交易紀錄新增資料_AddValue.Count > 0) this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄新增資料_AddValue, false);
+            }
+            catch
+            {
+                MyMessageBox.ShowDialog("寫入交易紀錄失敗!");
+            }
+            
             if (list_取藥堆疊子資料_ReplaceValue.Count > 0) this.sqL_DataGridView_取藥堆疊子資料.SQL_ReplaceExtra(list_取藥堆疊子資料_ReplaceValue, false);
             if (list_取藥堆疊母資料_ReplaceValue.Count > 0) this.sqL_DataGridView_取藥堆疊母資料.SQL_ReplaceExtra(list_取藥堆疊母資料_ReplaceValue, false);
             //if (list_醫囑資料_ReplaceValue.Count > 0) this.sqL_DataGridView_醫囑資料.SQL_ReplaceExtra(list_醫囑資料_ReplaceValue, false);
