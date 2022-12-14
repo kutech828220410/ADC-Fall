@@ -16,8 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.7.0")]
-[assembly: AssemblyFileVersion("1.0.7.0")]
+[assembly: AssemblyVersion("1.0.8.0")]
+[assembly: AssemblyFileVersion("1.0.8.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
@@ -89,11 +89,13 @@ namespace 智能落藥櫃系統
             private bool _帳密登入_Enable = true;
             private string rFID_COMPort = "COM1";
             private string scanner_COMPort = "COM2";
+            private string _藥物辨識網址 = "";
 
             public string FTP_Server { get => fTP_Server; set => fTP_Server = value; }
             public bool 帳密登入_Enable { get => _帳密登入_Enable; set => _帳密登入_Enable = value; }
             public string RFID_COMPort { get => rFID_COMPort; set => rFID_COMPort = value; }
             public string Scanner_COMPort { get => scanner_COMPort; set => scanner_COMPort = value; }
+            public string 藥物辨識網址 { get => _藥物辨識網址; set => _藥物辨識網址 = value; }
         }
         private void LoadMyConfig()
         {
@@ -244,9 +246,15 @@ namespace 智能落藥櫃系統
             this.plC_UI_Init.Add_Method(sub_Program_門未關閉警示);
 
             this.plC_RJ_Button_系統更新.MouseDownEvent += PlC_RJ_Button_系統更新_MouseDownEvent;
+            this.plC_RJ_Button_藥物辨識圖片測試.MouseDownEvent += PlC_RJ_Button_藥物辨識圖片測試_MouseDownEvent;
         }
 
-     
+        private void PlC_RJ_Button_藥物辨識圖片測試_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Function_顯示藥物辨識圖片("08566", this.pictureBox_領藥台_01_藥品圖片);
+        }
+
+
 
         #region PLC_Method
         PLC_Device PLC_Device_Method = new PLC_Device("");

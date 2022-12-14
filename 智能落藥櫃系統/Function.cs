@@ -429,5 +429,24 @@ namespace 智能落藥櫃系統
             //if (Code.Length < 5) Code = "0" + Code;
             return Code;
         }
+
+        public string Function_取得藥品網址(string 藥品碼)
+        {
+            if (藥品碼.Length < 5) 藥品碼 = "0" + 藥品碼;
+            string URL = $@"{myConfigClass.藥物辨識網址}{藥品碼}.jpg";
+            return string.Format(URL, 藥品碼);
+        }
+        public void Function_顯示藥物辨識圖片(string 藥品碼, PictureBox pictureBox)
+        {
+            if (myConfigClass.藥物辨識網址.StringIsEmpty() == false)
+            {
+                this.Invoke(new Action(delegate 
+                {
+                    string URL = this.Function_取得藥品網址(藥品碼);
+                    Basic.Net.DowloadToPictureBox(URL, pictureBox);
+                }));
+       
+            }
+        }
     }
 }

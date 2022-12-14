@@ -444,7 +444,7 @@ namespace 智能落藥櫃系統
             string 病歷號 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.病歷號];
             string 病人姓名 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.病人姓名];
             string 開方時間 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.開方時間];
-
+            this.Function_顯示藥物辨識圖片(藥品碼, this.pictureBox_領藥台_01_藥品圖片);
             Console.WriteLine($"掃碼成功!");
             Console.WriteLine($"藥品碼:{藥品碼}");
             Console.WriteLine($"藥品名稱:{藥品名稱}");
@@ -603,14 +603,10 @@ namespace 智能落藥櫃系統
         }
         void cnt_Program_領藥台_01_檢查輸入資料_200_設定可入帳(ref int cnt)
         {
-
+          
             this.Function_取藥堆疊子資料_設定配藥完成ByCode("P01", this.領藥台_01_檢查輸入資料_藥品碼);
     
             cnt++;
-
-
-
-
         }
         #endregion
 
@@ -917,10 +913,10 @@ namespace 智能落藥櫃系統
         private void PlC_RJ_Button_領藥台_01_取消作業_MouseDownEvent(MouseEventArgs mevent)
         {
             //if (!this.PLC_Device_領藥台_01_已登入.Bool) return;
-            this.Invoke(new Action(delegate
-            {
-                this.pictureBox_領藥台_01_藥品圖片.Image = null;
-            }));
+            //this.Invoke(new Action(delegate
+            //{
+            //    this.pictureBox_領藥台_01_藥品圖片.Image = null;
+            //}));
             this.Function_取藥堆疊資料_刪除指定調劑台名稱母資料("P01");
             this.sqL_DataGridView_領藥台_01_領藥內容.ClearGrid();
         }
