@@ -24,7 +24,8 @@ namespace 智能落藥櫃系統
     {
 
         #region PLC_門未關閉警示
-        PLC_Device PLC_Device_門未關閉警示 = new PLC_Device("S800");
+        PLC_Device PLC_Device_門未關閉警示 = new PLC_Device("M8001");
+     //   PLC_Device PLC_Device_門未關閉警示 = new PLC_Device("S800");
         PLC_Device PLC_Device_門未關閉警示_OK = new PLC_Device("");
         Task Task_門未關閉警示;
         MyTimer MyTimer_門未關閉警示_結束延遲 = new MyTimer();

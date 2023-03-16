@@ -40,7 +40,8 @@ namespace 智能落藥櫃系統
             private SQL_DataGridView.ConnentionClass dB_order_list = new SQL_DataGridView.ConnentionClass();
             private SQL_DataGridView.ConnentionClass dB_Medicine_Cloud = new SQL_DataGridView.ConnentionClass();
             private SQL_DataGridView.ConnentionClass dB_trading = new SQL_DataGridView.ConnentionClass();
-
+            private string orderApiURL = "";
+            private string medApiURL = "";
 
 
             public SQL_DataGridView.ConnentionClass DB_Basic { get => dB_Basic; set => dB_Basic = value; }
@@ -48,6 +49,8 @@ namespace 智能落藥櫃系統
             public SQL_DataGridView.ConnentionClass DB_order_list { get => dB_order_list; set => dB_order_list = value; }
             public SQL_DataGridView.ConnentionClass DB_Medicine_Cloud { get => dB_Medicine_Cloud; set => dB_Medicine_Cloud = value; }
             public SQL_DataGridView.ConnentionClass DB_trading { get => dB_trading; set => dB_trading = value; }
+            public string OrderApiURL { get => orderApiURL; set => orderApiURL = value; }
+            public string MedApiURL { get => medApiURL; set => medApiURL = value; }
         }
         private void LoadDBConfig()
         {

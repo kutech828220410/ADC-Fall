@@ -33,6 +33,8 @@ namespace 智能落藥櫃系統
         最小包裝數量,
         藥品條碼1,
         藥品條碼2,
+        警訊藥品,
+        管制級別,
     }
 
     public partial class Form1 : Form

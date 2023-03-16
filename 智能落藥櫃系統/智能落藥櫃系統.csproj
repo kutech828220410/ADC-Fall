@@ -81,6 +81,10 @@
     <Reference Include="MyFtpUI">
       <HintPath>..\0.DLL\MyFtpUI.dll</HintPath>
     </Reference>
+    <Reference Include="MyOffice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\0.DLL\MyOffice.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\MySql.Data.dll</HintPath>
@@ -150,6 +154,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\Dialog_手動作業.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_手動作業.Designer.cs">
+      <DependentUpon>Dialog_手動作業.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog_設定產出時間.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +225,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialog\Dialog_手動作業.resx">
+      <DependentUpon>Dialog_手動作業.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

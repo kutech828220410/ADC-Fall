@@ -102,7 +102,7 @@ namespace 智能落藥櫃系統
           
             if (MySerialPort_Scanner.ReadByte() != null || plC_RJ_Button_掃碼測試.Bool)
             {
-                MyTimer_Scanner_讀取藥單資料.StartTickTime(100);
+                MyTimer_Scanner_讀取藥單資料.StartTickTime(200);
                 cnt++;
             }
 

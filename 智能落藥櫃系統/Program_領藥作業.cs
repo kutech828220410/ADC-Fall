@@ -115,6 +115,8 @@ namespace 智能落藥櫃系統
                 }
                 if (!this.flag_Program_領藥台_01_換頁)
                 {
+                    this.Function_工程模式_LED_Clear();
+
                     this.Function_登出();
                     PlC_RJ_Button_領藥台_01_取消作業_MouseDownEvent(null);
 
@@ -377,17 +379,19 @@ namespace 智能落藥櫃系統
             if (cnt_Program_領藥台_01_檢查輸入資料 == 102) cnt_Program_領藥台_01_檢查輸入資料 = 200;
 
             if (cnt_Program_領藥台_01_檢查輸入資料 == 200) cnt_Program_領藥台_01_檢查輸入資料_200_檢查重複領藥(ref cnt_Program_領藥台_01_檢查輸入資料);
-            if (cnt_Program_領藥台_01_檢查輸入資料 == 201) cnt_Program_領藥台_01_檢查輸入資料_200_寫入取藥堆疊(ref cnt_Program_領藥台_01_檢查輸入資料);
-            if (cnt_Program_領藥台_01_檢查輸入資料 == 202) cnt_Program_領藥台_01_檢查輸入資料_200_檢查取藥流程完成(ref cnt_Program_領藥台_01_檢查輸入資料);
-            if (cnt_Program_領藥台_01_檢查輸入資料 == 203) cnt_Program_領藥台_01_檢查輸入資料_200_開始落藥及開門(ref cnt_Program_領藥台_01_檢查輸入資料);
-            if (cnt_Program_領藥台_01_檢查輸入資料 == 204) cnt_Program_領藥台_01_檢查輸入資料_200_設定可入帳(ref cnt_Program_領藥台_01_檢查輸入資料);           
-            if (cnt_Program_領藥台_01_檢查輸入資料 == 205) cnt_Program_領藥台_01_檢查輸入資料 = 65500;
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 201) cnt_Program_領藥台_01_檢查輸入資料_200_寫入取藥堆疊(ref cnt_Program_領藥台_01_檢查輸入資料);        
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 202) cnt_Program_領藥台_01_檢查輸入資料 = 300;
 
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 300) cnt_Program_領藥台_01_檢查輸入資料_300_檢查取藥流程完成(ref cnt_Program_領藥台_01_檢查輸入資料);
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 301) cnt_Program_領藥台_01_檢查輸入資料_300_開始落藥及開門(ref cnt_Program_領藥台_01_檢查輸入資料);
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 302) cnt_Program_領藥台_01_檢查輸入資料_300_設定可入帳(ref cnt_Program_領藥台_01_檢查輸入資料);
+            if (cnt_Program_領藥台_01_檢查輸入資料 == 303) cnt_Program_領藥台_01_檢查輸入資料 = 65500;
 
             if (cnt_Program_領藥台_01_檢查輸入資料 > 1) cnt_Program_領藥台_01_檢查輸入資料_檢查放開(ref cnt_Program_領藥台_01_檢查輸入資料);
 
             if (cnt_Program_領藥台_01_檢查輸入資料 == 65500)
             {
+                pLC_Device_手動作業.Bool = false;
                 PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 PLC_Device_領藥台_01_檢查輸入資料.Bool = false;
                 cnt_Program_領藥台_01_檢查輸入資料 = 65535;
@@ -417,8 +421,18 @@ namespace 智能落藥櫃系統
         }
         void cnt_Program_領藥台_01_檢查輸入資料_100_設定掃描完成(ref int cnt)
         {
+            List<object[]> list_value = this.Function_取藥堆疊資料_取得母資料();
+            list_value = list_value.GetRows((int)enum_取藥堆疊母資料.調劑台名稱, "P01");
+            if (list_value.Count > 0 && pLC_Device_手動作業.Bool)
+            {
+                pLC_Device_手動作業.Bool = false;
+                PLC_Device_Scanner_讀取藥單資料.Bool = false;
+                cnt = 300;
+                return;
+            }
             if (!PLC_Device_Scanner_讀取藥單資料.Bool)
             {
+              
                 if(PLC_Device_Scanner_讀取藥單資料_OK.Bool)
                 {
                     
@@ -499,7 +513,7 @@ namespace 智能落藥櫃系統
             this.領藥台_01_檢查輸入資料_藥品碼 = 藥品碼;
             cnt++;
         }
-        void cnt_Program_領藥台_01_檢查輸入資料_200_檢查取藥流程完成(ref int cnt)
+        void cnt_Program_領藥台_01_檢查輸入資料_300_檢查取藥流程完成(ref int cnt)
         {
             PLC_Device_領藥台_01_已領取過藥品.Bool = true;
             List<object[]> list_value = this.sqL_DataGridView_領藥台_01_領藥內容.GetAllRows();
@@ -532,7 +546,7 @@ namespace 智能落藥櫃系統
 
 
         }
-        void cnt_Program_領藥台_01_檢查輸入資料_200_開始落藥及開門(ref int cnt)
+        void cnt_Program_領藥台_01_檢查輸入資料_300_開始落藥及開門(ref int cnt)
         {
             this.Function_從SQL取得儲位到本地資料();
             List<Task> taskList = new List<Task>();
@@ -601,7 +615,7 @@ namespace 智能落藥櫃系統
 
 
         }
-        void cnt_Program_領藥台_01_檢查輸入資料_200_設定可入帳(ref int cnt)
+        void cnt_Program_領藥台_01_檢查輸入資料_300_設定可入帳(ref int cnt)
         {
           
             this.Function_取藥堆疊子資料_設定配藥完成ByCode("P01", this.領藥台_01_檢查輸入資料_藥品碼);
@@ -790,59 +804,62 @@ namespace 智能落藥櫃系統
                 }
             }
         }
+        PLC_Device pLC_Device_手動作業 = new PLC_Device("S105");
         private void PlC_RJ_Button_領藥台_01_手動作業_MouseDownEvent(MouseEventArgs mevent)
         {
-            //this.Invoke(new Action(delegate
-            //{
-            //    Dialog_手動作業.enum_狀態 enum_狀態 = Dialog_手動作業.enum_狀態.領藥;
-            //    if (this.plC_Button_領藥台_01_領.Bool)
-            //    {
-            //        enum_狀態 = Dialog_手動作業.enum_狀態.領藥;
-            //    }
-            //    if (this.plC_Button_領藥台_01_退.Bool)
-            //    {
-            //        enum_狀態 = Dialog_手動作業.enum_狀態.退藥;
-            //    }
-            //    Dialog_手動作業 dialog_手動作業 = new Dialog_手動作業((Form1)this.FindForm(), this.sqL_DataGridView_藥品資料_藥檔資料, enum_狀態);
-            //    dialog_手動作業.ShowDialog();
-            //    List<object[]> list_value = dialog_手動作業.Value;
-            //    if (list_value.Count == 0) return;
-            //    List<object[]> list_藥品資料 = this.sqL_DataGridView_藥品資料_藥檔資料.SQL_GetAllRows(false);
-            //    List<object[]> list_藥品資料_buf = new List<object[]>();
-            //    for (int i = 0; i < list_value.Count; i++)
-            //    {
-            //        string GUID = Guid.NewGuid().ToString();
-            //        string 調劑台名稱 = this.textBox_工程模式_領藥台_01_名稱.Text;
+            this.Invoke(new Action(delegate
+            {
+                Dialog_手動作業.enum_狀態 enum_狀態 = Dialog_手動作業.enum_狀態.領藥;
+                if (this.plC_Button_領藥台_01_領.Bool)
+                {
+                    enum_狀態 = Dialog_手動作業.enum_狀態.領藥;
+                }
+                if (this.plC_Button_領藥台_01_退.Bool)
+                {
+                    enum_狀態 = Dialog_手動作業.enum_狀態.退藥;
+                }
+                Dialog_手動作業 dialog_手動作業 = new Dialog_手動作業((Form1)this.FindForm(), this.sqL_DataGridView_藥品資料_藥檔資料, enum_狀態);
+                dialog_手動作業.ShowDialog();
+                List<object[]> list_value = dialog_手動作業.Value;
+                if (list_value.Count == 0) return;
+                List<object[]> list_藥品資料 = this.sqL_DataGridView_藥品資料_藥檔資料.SQL_GetAllRows(false);
+                List<object[]> list_藥品資料_buf = new List<object[]>();
+                for (int i = 0; i < list_value.Count; i++)
+                {
+                    string GUID = Guid.NewGuid().ToString();
+                    string 調劑台名稱 = "P01";
 
-            //        string 藥品碼 = list_value[i][(int)enum_選擇藥品.藥品碼].ObjectToString();
-            //        list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥品資料_藥檔資料.藥品碼, 藥品碼);
-            //        if (list_藥品資料_buf.Count == 0) continue;
-            //        string 藥品名稱 = list_藥品資料[0][(int)enum_藥品資料_藥檔資料.藥品名稱].ObjectToString();
-            //        string 藥袋序號 = "";
-            //        string 單位 = list_藥品資料_buf[0][(int)enum_藥品資料_藥檔資料.包裝單位].ObjectToString();
-            //        string 病歷號 = "";
-            //        string 病人姓名 = "";
-            //        string 開方時間 = DateTime.Now.ToDateTimeString_6();
-            //        string ID = this.領藥台_01_ID;
-            //        string 操作人 = this.領藥台_01_登入者姓名;
-            //        string 顏色 = this.領藥台_01_顏色;
-            //        int 總異動量 = list_value[i][(int)enum_選擇藥品.交易量].ObjectToString().StringToInt32();
-            //        enum_交易記錄查詢動作 動作 = enum_交易記錄查詢動作.掃碼領藥;
-            //        if (總異動量 <= 0)
-            //        {
-            //            動作 = enum_交易記錄查詢動作.手輸領藥;
-            //        }
-            //        else
-            //        {
-            //            動作 = enum_交易記錄查詢動作.手輸退藥;
-            //        }
-            //        string 效期 = "";
+                    string 藥品碼 = list_value[i][(int)enum_選擇藥品.藥品碼].ObjectToString();
+                    this.領藥台_01_檢查輸入資料_藥品碼 = 藥品碼;
+                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥品資料_藥檔資料.藥品碼, 藥品碼);
+                    if (list_藥品資料_buf.Count == 0) continue;
+                    string 藥品名稱 = list_藥品資料[0][(int)enum_藥品資料_藥檔資料.藥品名稱].ObjectToString();
+                    string 藥袋序號 = "";
+                    string 單位 = list_藥品資料_buf[0][(int)enum_藥品資料_藥檔資料.包裝單位].ObjectToString();
+                    string 病歷號 = "";
+                    string 病人姓名 = "";
+                    string 開方時間 = DateTime.Now.ToDateTimeString_6();
+                    string ID = this.領藥台_01_ID;
+                    string 操作人 = this.領藥台_01_登入者姓名;
+                    string 顏色 = this.領藥台_01_顏色;
+                    int 總異動量 = list_value[i][(int)enum_選擇藥品.交易量].ObjectToString().StringToInt32();
+                    enum_交易記錄查詢動作 動作 = enum_交易記錄查詢動作.掃碼領藥;
+                    if (總異動量 <= 0)
+                    {
+                        動作 = enum_交易記錄查詢動作.手輸領藥;
+                    }
+                    else
+                    {
+                        動作 = enum_交易記錄查詢動作.手輸退藥;
+                    }
+                    string 效期 = "";
 
-            //        this.Function_取藥堆疊資料_新增母資料(GUID, 調劑台名稱, 動作, 藥品碼, 藥品名稱, 藥袋序號, 單位, 病歷號, 病人姓名, 開方時間, "", 操作人, 顏色, 總異動量, 效期);
+                    this.Function_取藥堆疊資料_新增母資料(GUID, 調劑台名稱, 動作, 藥品碼, 藥品名稱, 藥袋序號, 單位, 病歷號, 病人姓名, 開方時間, "", 操作人, 顏色, 總異動量, 效期);
 
-            //    }
+                }
+                pLC_Device_手動作業.Bool = true;
 
-            //}));
+            }));
         }
         private void PlC_RJ_Button_領藥台_01_登入_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -904,7 +921,7 @@ namespace 智能落藥櫃系統
                 this.pictureBox_領藥台_01_藥品圖片.Image = null;
             }));
             this.sqL_DataGridView_領藥台_01_領藥內容.ClearGrid();
-
+            this.PlC_RJ_Button_領藥台_01_取消作業_MouseDownEvent(null);
             Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作.登出, this.領藥台_01_登入者姓名, "01.號使用者");
             this.領藥台_01_登入者姓名 = "None";
             this.PLC_Device_領藥台_01_已登入.Bool = false;

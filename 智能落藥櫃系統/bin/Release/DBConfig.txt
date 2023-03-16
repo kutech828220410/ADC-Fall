@@ -43,5 +43,7 @@
     "Port": 3306,
     "MySqlSslMode": 0,
     "TableName": ""
-  }
+  },
+  "OrderApiURL": "",
+  "MedApiURL": ""
 }

@@ -261,6 +261,40 @@ namespace 智能落藥櫃系統
         }
         private void SqL_DataGridView_儲位管理_儲位資訊_RowEnterEvent(object[] RowValue)
         {
+            int 層數 = RowValue[(int)enum_儲位管理_儲位資訊.層數].ObjectToString().StringToInt32();
+            int Start_value = RowValue[(int)enum_儲位管理_儲位資訊.起始號碼].ObjectToString().StringToInt32();
+            int End_value = RowValue[(int)enum_儲位管理_儲位資訊.結束號碼].ObjectToString().StringToInt32();
+
+            plC_NumBox_儲位管理_起始號碼.Value = Start_value;
+            plC_NumBox_儲位管理_結束號碼.Value = End_value;
+            this.Function_工程模式_LED_Clear();
+            this.Function_工程模式_LED(Start_value, End_value, true);
+            //if (層數 < 0 || Start_value < 0 || End_value < 0) return;
+
+            //if (層數 == 1)
+            //{
+            //    rJ_RatioButton_儲位管理_第一層.Checked = true;
+            //}
+            //if (層數 == 2)
+            //{
+            //    rJ_RatioButton_儲位管理_第二層.Checked = true;
+            //}
+            //if (層數 == 3)
+            //{
+            //    rJ_RatioButton_儲位管理_第三層.Checked = true;
+            //}
+            //if (層數 == 4)
+            //{
+            //    rJ_RatioButton_儲位管理_第四層.Checked = true;
+            //}
+            //if (層數 == 5)
+            //{
+            //    rJ_RatioButton_儲位管理_第五層.Checked = true;
+            //}
+
+            //this.rowsLED_Pannel_儲位管理_儲位號碼.SetValue(Start_value, End_value);
+
+
             string GUID = RowValue[(int)enum_儲位管理_儲位資訊.GUID].ObjectToString();
             RowsDevice rowsDevice = List_RowsLED_本地資料.GetRowsDevice(GUID);
             if (rowsDevice == null) return;
@@ -280,34 +314,7 @@ namespace 智能落藥櫃系統
         }
         private void SqL_DataGridView_儲位管理_儲位資訊_RowDoubleClickEvent(object[] RowValue)
         {
-            int 層數 = RowValue[(int)enum_儲位管理_儲位資訊.層數].ObjectToString().StringToInt32();
-            int Start_value = RowValue[(int)enum_儲位管理_儲位資訊.起始號碼].ObjectToString().StringToInt32();
-            int End_value = RowValue[(int)enum_儲位管理_儲位資訊.結束號碼].ObjectToString().StringToInt32();
-
-            if (層數 < 0 || Start_value < 0 || End_value < 0) return;
-
-            if (層數 == 1)
-            {
-                rJ_RatioButton_儲位管理_第一層.Checked = true;
-            }
-            if (層數 == 2)
-            {
-                rJ_RatioButton_儲位管理_第二層.Checked = true;
-            }
-            if (層數 == 3)
-            {
-                rJ_RatioButton_儲位管理_第三層.Checked = true;
-            }
-            if (層數 == 4)
-            {
-                rJ_RatioButton_儲位管理_第四層.Checked = true;
-            }
-            if (層數 == 5)
-            {
-                rJ_RatioButton_儲位管理_第五層.Checked = true;
-            }
-
-            this.rowsLED_Pannel_儲位管理_儲位號碼.SetValue(Start_value, End_value);
+           
         }
 
         private void PlC_RJ_Button_儲位管理_儲位資訊_更新_MouseDownEvent(MouseEventArgs mevent)
@@ -411,8 +418,9 @@ namespace 智能落藥櫃系統
         }
         private void PlC_RJ_Button_儲位設定_亮燈_MouseDownEvent(MouseEventArgs mevent)
         {
-            int StartLED = rowsLED_Pannel_儲位管理_儲位號碼.MinValue;
-            int EndLED = rowsLED_Pannel_儲位管理_儲位號碼.MaxValue;
+  
+            int StartLED = plC_NumBox_儲位管理_起始號碼.Value;
+            int EndLED = plC_NumBox_儲位管理_結束號碼.Value;
             this.Function_工程模式_LED_Clear();
             this.Function_工程模式_LED(StartLED, EndLED, true);
         }
@@ -422,30 +430,42 @@ namespace 智能落藥櫃系統
         }
         private void PlC_RJ_Button_儲位設定_出料一次_MouseDownEvent(MouseEventArgs mevent)
         {
-            int StartLED = rowsLED_Pannel_儲位管理_儲位號碼.MinValue;
-            int EndLED = rowsLED_Pannel_儲位管理_儲位號碼.MaxValue;
+            int StartLED = plC_NumBox_儲位管理_起始號碼.Value;
+            int EndLED = plC_NumBox_儲位管理_結束號碼.Value;
             this.Function_工程模式_Motor(StartLED, EndLED, true);
         }
 
         private void PlC_RJ_Button_儲位管理_藥品資料_中文名稱搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            if (rJ_TextBox_儲位管理_藥品資料_中文名稱.Text.StringIsEmpty()) return;
+            if (rJ_TextBox_儲位管理_藥品資料_中文名稱.Text.Length < 3)
+            {
+                MyMessageBox.ShowDialog("搜尋字元不得小於3個!");
+                return;
+            }
             List<object[]> list_value = this.sqL_DataGridView_儲位管理_藥品資料.SQL_GetAllRows(false);
-            list_value = list_value.GetRowsByLike((int)enum_藥品資料_藥檔資料.藥品中文名稱, rJ_TextBox_儲位管理_藥品資料_中文名稱.Text.ToUpper());
+            list_value = list_value.GetRowsStartWithByLike((int)enum_藥品資料_藥檔資料.藥品中文名稱, rJ_TextBox_儲位管理_藥品資料_中文名稱.Text.ToUpper());
             this.sqL_DataGridView_儲位管理_藥品資料.RefreshGrid(list_value);
         }
         private void PlC_RJ_Button_儲位管理_藥品資料_藥品名稱搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            if (rJ_TextBox_儲位管理_藥品資料_藥品名稱.Text.StringIsEmpty()) return;
+            if (rJ_TextBox_儲位管理_藥品資料_藥品名稱.Text.Length < 3)
+            {
+                MyMessageBox.ShowDialog("搜尋字元不得小於3個!");
+                return;
+            }
             List<object[]> list_value = this.sqL_DataGridView_儲位管理_藥品資料.SQL_GetAllRows(false);
-            list_value = list_value.GetRowsByLike((int)enum_藥品資料_藥檔資料.藥品名稱, rJ_TextBox_儲位管理_藥品資料_藥品名稱.Text.ToUpper());
+            list_value = list_value.GetRowsStartWithByLike((int)enum_藥品資料_藥檔資料.藥品名稱, rJ_TextBox_儲位管理_藥品資料_藥品名稱.Text.ToUpper());
             this.sqL_DataGridView_儲位管理_藥品資料.RefreshGrid(list_value);
         }
         private void PlC_RJ_Button_儲位管理_藥品資料_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            if (rJ_TextBox_儲位管理_藥品資料_藥品碼.Text.StringIsEmpty()) return;
+            if (rJ_TextBox_儲位管理_藥品資料_藥品碼.Text.Length < 3)
+            {
+                MyMessageBox.ShowDialog("搜尋字元不得小於3個!");
+                return;
+            }
             List<object[]> list_value = this.sqL_DataGridView_儲位管理_藥品資料.SQL_GetAllRows(false);
-            list_value = list_value.GetRowsByLike((int)enum_藥品資料_藥檔資料.藥品碼, rJ_TextBox_儲位管理_藥品資料_藥品碼.Text.ToUpper());
+            list_value = list_value.GetRowsStartWithByLike((int)enum_藥品資料_藥檔資料.藥品碼, rJ_TextBox_儲位管理_藥品資料_藥品碼.Text.ToUpper());
             this.sqL_DataGridView_儲位管理_藥品資料.RefreshGrid(list_value);
         }
         private void PlC_RJ_Button_儲位管理_儲位資訊_修正批號_MouseDownEvent(MouseEventArgs mevent)
@@ -748,6 +768,8 @@ namespace 智能落藥櫃系統
         {
             if(rJ_RatioButton_儲位管理_第一層.Checked)
             {
+
+
                 plC_NumBox_儲位管理_起始號碼.Value = 1 + 單層格數 * 0;
                 plC_NumBox_儲位管理_結束號碼.Value = 單層格數 * 1;
 

@@ -242,3 +242,9 @@ C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\obj\Release\智能落藥
 C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\obj\Release\智能落藥櫃系統.csproj.CopyComplete
 C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\obj\Release\智能落藥櫃系統.exe
 C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\obj\Release\智能落藥櫃系統.pdb
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\bin\Release\MyOffice.dll
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\bin\Release\NPOI.dll
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\bin\Release\NPOI.OOXML.dll
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\HS\Source\Repos\ADC-Fall\智能落藥櫃系統\obj\Release\智能落藥櫃系統.Dialog_手動作業.resources
