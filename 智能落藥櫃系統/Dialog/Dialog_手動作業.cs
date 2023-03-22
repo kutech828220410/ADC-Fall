@@ -110,7 +110,7 @@ namespace 智能落藥櫃系統
                 MyMessageBox.ShowDialog("未選取資料!");
                 return;
             }
-            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("請輸入領藥數量",0);
             if (dialog_NumPannel.ShowDialog() != DialogResult.Yes) return;
             int 交易量 = dialog_NumPannel.Value;
             if (交易量 == 0)
@@ -184,6 +184,11 @@ namespace 智能落藥櫃系統
                 if (this.Value.Count > 1)
                 {
                     MyMessageBox.ShowDialog("只能選取一種藥品!");
+                    return;
+                }
+                if(rJ_TextBox_病歷號.Text.StringIsEmpty())
+                {
+                    MyMessageBox.ShowDialog("[病歷號]不得為空白!");
                     return;
                 }
                 this.DialogResult = DialogResult.Yes;

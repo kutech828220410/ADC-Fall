@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            MyUI.PLC_MultiStateDisplay.TextValue textValue1 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue2 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue3 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue4 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue5 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue6 = new MyUI.PLC_MultiStateDisplay.TextValue();
             this.plC_ScreenPage_Main = new MyUI.PLC_ScreenPage();
             this.領藥作業 = new System.Windows.Forms.TabPage();
             this.rJ_GroupBox4 = new MyUI.RJ_GroupBox();
@@ -1194,48 +1188,6 @@
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.TabIndex = 7;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.字體顏色 = System.Drawing.Color.Black;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.文字對齊位置 = System.Drawing.ContentAlignment.TopLeft;
-            textValue1.Name = "M4000";
-            textValue1.Text = "請登入身分...";
-            textValue1.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue1.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue1.文字顏色 = System.Drawing.Color.Black;
-            textValue1.自定義參數 = false;
-            textValue2.Name = "M4001";
-            textValue2.Text = "登入者姓名 : XXX";
-            textValue2.字體 = new System.Drawing.Font("微軟正黑體", 30F);
-            textValue2.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue2.文字顏色 = System.Drawing.Color.Black;
-            textValue2.自定義參數 = true;
-            textValue3.Name = "M4002";
-            textValue3.Text = "登入失敗,查無此資料!";
-            textValue3.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue3.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue3.文字顏色 = System.Drawing.Color.Red;
-            textValue3.自定義參數 = false;
-            textValue4.Name = "M4005";
-            textValue4.Text = "請選擇領/退藥";
-            textValue4.字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
-            textValue4.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue4.文字顏色 = System.Drawing.Color.Red;
-            textValue4.自定義參數 = false;
-            textValue5.Name = "M4006";
-            textValue5.Text = "此藥單已領用過!";
-            textValue5.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue5.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue5.文字顏色 = System.Drawing.Color.Red;
-            textValue5.自定義參數 = false;
-            textValue6.Name = "M4007";
-            textValue6.Text = "掃碼失敗!";
-            textValue6.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue6.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue6.文字顏色 = System.Drawing.Color.Red;
-            textValue6.自定義參數 = false;
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue1);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue2);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue3);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue4);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue5);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue6);
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.背景顏色 = System.Drawing.Color.SkyBlue;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.顯示字體 = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             // 
@@ -3806,7 +3758,7 @@
             this.rJ_Lable18.Name = "rJ_Lable18";
             this.rJ_Lable18.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable18.TabIndex = 2;
-            this.rJ_Lable18.Text = "藥品名稱";
+            this.rJ_Lable18.Text = "藥名";
             this.rJ_Lable18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable18.TextColor = System.Drawing.Color.Black;
             // 
@@ -3862,7 +3814,7 @@
             this.rJ_Lable17.Name = "rJ_Lable17";
             this.rJ_Lable17.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable17.TabIndex = 2;
-            this.rJ_Lable17.Text = "藥品碼";
+            this.rJ_Lable17.Text = "藥碼";
             this.rJ_Lable17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable17.TextColor = System.Drawing.Color.Black;
             // 

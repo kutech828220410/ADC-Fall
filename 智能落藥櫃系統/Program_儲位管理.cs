@@ -350,8 +350,8 @@ namespace 智能落藥櫃系統
             }
             List<RowsDevice> rowsDevices = new List<RowsDevice>();
             string GUID = list_value[0][(int)enum_儲位管理_儲位資訊.GUID].ObjectToString();
-            int StartLED = rowsLED_Pannel_儲位管理_儲位號碼.MinValue;
-            int EndLED = rowsLED_Pannel_儲位管理_儲位號碼.MaxValue;
+            int StartLED = plC_NumBox_儲位管理_起始號碼.Value;
+            int EndLED = plC_NumBox_儲位管理_結束號碼.Value;
             for (int i = 0; i < List_RowsLED_本地資料[0].RowsDevices.Count; i++)
             {
                 int len = List_RowsLED_本地資料[0].RowsDevices[i].EndLED - List_RowsLED_本地資料[0].RowsDevices[i].StartLED;
