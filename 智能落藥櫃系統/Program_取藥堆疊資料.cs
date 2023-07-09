@@ -515,7 +515,7 @@ namespace 智能落藥櫃系統
        
             if (str_TYPE == DeviceType.RowsLED.GetEnumName())
             {
-                List<RowsDevice> rowsDevices = this.List_RowsLED_雲端資料.SortByCode(藥品碼);
+                List<RowsDevice> rowsDevices = this.List_RowsLED_入賬資料.SortByCode(藥品碼);
                 for (int i = 0; i < rowsDevices.Count; i++)
                 {
                     if (rowsDevices[i].IP != IP) continue;
@@ -525,8 +525,8 @@ namespace 智能落藥櫃系統
                     {
                         rowsDevices[i].效期庫存異動(效期, 異動量);
                         批號 = rowsDevices[i].取得批號(效期);
-                        this.List_RowsLED_雲端資料.Add_NewRowsLED(rowsDevices[i]);
-                        RowsLED rowsLED = this.List_RowsLED_雲端資料.SortByIP(rowsDevices[i].IP);
+                        this.List_RowsLED_入賬資料.Add_NewRowsLED(rowsDevices[i]);
+                        RowsLED rowsLED = this.List_RowsLED_入賬資料.SortByIP(rowsDevices[i].IP);
                         this.rowsLEDUI.SQL_ReplaceRowsLED(rowsLED);
                         break;
                     }
@@ -846,6 +846,7 @@ namespace 智能落藥櫃系統
 
                 this.list_取藥堆疊母資料 = (from value in this.list_取藥堆疊母資料
                                      where value[(int)enum_取藥堆疊母資料.狀態].ObjectToString() != enum_取藥堆疊母資料_狀態.入賬完成.GetEnumName()
+                                     where value[(int)enum_取藥堆疊母資料.狀態].ObjectToString() != enum_取藥堆疊母資料_狀態.等待作業.GetEnumName()
                                      where value[(int)enum_取藥堆疊母資料.狀態].ObjectToString() != enum_取藥堆疊母資料_狀態.等待入帳.GetEnumName()
                                      where value[(int)enum_取藥堆疊母資料.狀態].ObjectToString() != enum_取藥堆疊母資料_狀態.新增效期.GetEnumName()
                                      where value[(int)enum_取藥堆疊母資料.狀態].ObjectToString() != enum_取藥堆疊母資料_狀態.庫存不足.GetEnumName()
@@ -1409,7 +1410,7 @@ namespace 智能落藥櫃系統
                 List<object> list_code = Code_LINQ.ToList();
                 for (int i = 0; i < list_code.Count; i++)
                 {
-                    this.Function_從SQL取得儲位到雲端資料(list_code[i].ObjectToString());
+                    this.Function_從SQL取得儲位到入賬資料(list_code[i].ObjectToString());
                 }
             }
             string Master_GUID = "";
@@ -1445,7 +1446,7 @@ namespace 智能落藥櫃系統
                 操作時間 = DateTime.Now.ToDateTimeString_6();
                 開方時間 = list_可入賬母資料[i][(int)enum_取藥堆疊母資料.開方時間].ObjectToString();
                 備註 = "";
-                庫存量 = this.Function_從雲端資料取得庫存(藥品碼);
+                庫存量 = this.Function_從入賬資料取得庫存(藥品碼);
                 結存量 = (庫存量 + 總異動量);
                 List_效期.Clear();
                 List_批號.Clear();

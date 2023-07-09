@@ -16,8 +16,8 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.10.0")]
-[assembly: AssemblyFileVersion("1.0.10.0")]
+[assembly: AssemblyVersion("1.0.12.0")]
+[assembly: AssemblyFileVersion("1.0.12.0")]
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form

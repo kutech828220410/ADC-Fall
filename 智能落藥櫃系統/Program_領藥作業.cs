@@ -502,6 +502,8 @@ namespace 智能落藥櫃系統
             string 中文名稱 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.中文名稱];
             string 單位 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.包裝單位];
             int 總異動量 = (Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.使用數量].StringToInt32() * -1);
+
+
             string 病歷號 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.病歷號];
             string 病人姓名 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.病人姓名];
             string 開方時間 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.開方時間];

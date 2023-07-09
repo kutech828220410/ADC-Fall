@@ -37,6 +37,10 @@ namespace 智能落藥櫃系統
             登出,
             操作工程模式,
             效期庫存異動,
+            新增效期,
+            修正庫存,
+            新增庫存,
+            修正批號,
             入庫作業,
             None,
         }
@@ -70,11 +74,11 @@ namespace 智能落藥櫃系統
             this.sqL_DataGridView_交易記錄查詢.DataGridRefreshEvent += SqL_DataGridView_交易記錄查詢_DataGridRefreshEvent;
             this.sqL_DataGridView_交易記錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_交易記錄查詢_DataGridRowsChangeRefEvent;
             this.plC_RJ_Button_交易記錄查詢_顯示全部.MouseDownEvent += PlC_RJ_Button_交易記錄查詢_顯示全部_MouseDownEvent;
-
+            this.plC_RJ_Button_交易記錄查詢_刪除.MouseDownEvent += PlC_RJ_Button_交易記錄查詢_刪除_MouseDownEvent;
             this.plC_UI_Init.Add_Method(this.sub_Program_交易記錄查詢);
         }
 
-
+     
 
         private void sub_Program_交易記錄查詢()
         {
@@ -144,6 +148,13 @@ namespace 智能落藥櫃系統
                 }
             }
         }
+        private void PlC_RJ_Button_交易記錄查詢_刪除_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.Get_All_Select_RowsValues();
+            if (MyMessageBox.ShowDialog($"是否刪除<{list_value.Count}>筆資料?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+            this.sqL_DataGridView_交易記錄查詢.SQL_DeleteExtra(list_value, false);
+            this.sqL_DataGridView_交易記錄查詢.DeleteExtra(list_value, true);
+        }
         private void PlC_RJ_Button_交易記錄查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
@@ -178,6 +189,10 @@ namespace 智能落藥櫃系統
             if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_效期庫存異動.Bool)
             {
                 list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.效期庫存異動.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.新增效期.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.新增庫存.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.修正庫存.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.修正批號.GetEnumName()));
 
             }
             if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_後臺操作.Bool)

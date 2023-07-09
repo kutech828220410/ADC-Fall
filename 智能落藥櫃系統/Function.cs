@@ -32,8 +32,77 @@ namespace 智能落藥櫃系統
     {
         public List<RowsLED> List_RowsLED_本地資料 = new List<RowsLED>();
         public List<RowsLED> List_RowsLED_雲端資料 = new List<RowsLED>();
+        public List<RowsLED> List_RowsLED_入賬資料 = new List<RowsLED>();
         public PLC_Device PLC_Device_LED = new PLC_Device("M1101Z6");
         public PLC_Device PLC_Device_Motor = new PLC_Device("M101Z8");
+
+        public void Function_從SQL取得儲位到入賬資料(string 藥品碼)
+        {
+            List<object> list_value = new List<object>();
+     
+            List<RowsDevice> rowsDevices = this.List_RowsLED_雲端資料.SortByCode(藥品碼);
+            List<string> IPs = (from temp in rowsDevices
+                                select temp.IP).Distinct().ToList();
+
+            List<RowsLED> rowsLeds_buf = new List<RowsLED>();
+            for (int i = 0; i < IPs.Count; i++)
+            {
+                RowsLED rowsLED = this.rowsLEDUI.SQL_GetRowsLED(IPs[i]);
+                rowsLeds_buf = (from temp in this.List_RowsLED_入賬資料
+                                where temp.IP == rowsLED.IP
+                                select temp).ToList();
+                if (rowsLeds_buf.Count == 0) List_RowsLED_入賬資料.Add(rowsLED);
+                else rowsLeds_buf[0] = rowsLED;
+            }
+  
+         
+        }
+        public int Function_從入賬資料取得庫存(string 藥品碼)
+        {
+            int 庫存 = 0;
+            List<object> list_value = new List<object>();
+            List<string> 儲位_TYPE = new List<string>();
+            this.Function_從入賬資料取得儲位(this.Function_藥品碼檢查(藥品碼), ref 儲位_TYPE, ref list_value);
+
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                if (list_value[i] is Device)
+                {
+                    庫存 += ((Device)list_value[i]).Inventory.StringToInt32();
+                }
+            }
+            if (list_value.Count == 0) return -999;
+            return 庫存;
+        }
+        public void Function_從入賬資料取得儲位(string 藥品碼, ref List<string> TYPE, ref List<object> values)
+        {
+            List<object> list_value = this.Function_從入賬資料取得儲位(藥品碼);
+            TYPE.Clear();
+            values.Clear();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                if (list_value[i] is Device)
+                {
+                    Device device = (Device)list_value[i];
+                    values.Add(list_value[i]);
+                    TYPE.Add(device.DeviceType.GetEnumName());
+                }
+
+            }
+        }
+        public List<object> Function_從入賬資料取得儲位(string 藥品碼)
+        {
+            List<object> list_value = new List<object>();
+    
+            List<RowsDevice> rowsDevices = this.List_RowsLED_入賬資料.SortByCode(藥品碼);
+           
+            for (int i = 0; i < rowsDevices.Count; i++)
+            {
+                list_value.Add(rowsDevices[i]);
+            }
+           
+            return list_value;
+        }
 
         public void Function_設定雲端資料更新()
         {
