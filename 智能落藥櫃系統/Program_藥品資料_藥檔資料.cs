@@ -145,6 +145,19 @@ namespace 智能落藥櫃系統
                     this.RJ_ComboBox_藥品資料_藥檔資料_資料查詢_藥品群組_Enter(null, null);
                     this.flag_藥品資料_藥檔資料_頁面更新 = true;
                 }
+                if(this.MySerialPort_Scanner.ReadByte() != null)
+                {
+                    string text = this.MySerialPort_Scanner.ReadString();
+                    if(text != null)
+                    {
+                        MySerialPort_Scanner.ClearReadByte();
+                        this.Invoke(new Action(delegate
+                        {
+                            text = text.Replace("\n\r", "");
+                            textBox_藥品資料_藥檔資料_藥品條碼.Text = text;
+                        }));
+                    }
+                }
             }
             else
             {

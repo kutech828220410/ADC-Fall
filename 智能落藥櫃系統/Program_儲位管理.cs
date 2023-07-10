@@ -104,6 +104,27 @@ namespace 智能落藥櫃系統
                 {
                     PLC_Device_儲位管理_儲位資訊_資料更新.Bool = true;
                     this.flag_儲位管理_頁面更新 = true;
+
+                  
+                }
+                string text = this.MySerialPort_Scanner.ReadString();
+                if (text != null)
+                {
+                    MySerialPort_Scanner.ClearReadByte();
+                    this.Invoke(new Action(delegate
+                    {
+                        List<object[]> list_藥檔資料 = this.sqL_DataGridView_藥品資料_藥檔資料.SQL_GetRows((int)enum_藥品資料_藥檔資料.藥品條碼, text, false);
+                        if (list_藥檔資料.Count > 0)
+                        {
+                            text = text.Replace("\n\r", "");
+                            sqL_DataGridView_儲位管理_儲位資訊.SetSelectRow(enum_儲位管理_儲位資訊.藥品碼.GetEnumName(), list_藥檔資料[0][(int)enum_藥品資料_藥檔資料.藥品碼].ObjectToString());
+                            MyMessageBox.ShowDialog($"藥品碼 : {list_藥檔資料[0][(int)enum_藥品資料_藥檔資料.藥品碼].ObjectToString()}\n 藥名 : {list_藥檔資料[0][(int)enum_藥品資料_藥檔資料.藥品名稱].ObjectToString()}");
+                        }
+                        else
+                        {
+                            MyMessageBox.ShowDialog($"找無此條碼! {text}");
+                        }
+                    }));
                 }
             }
             else

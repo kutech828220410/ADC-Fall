@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            MyUI.PLC_MultiStateDisplay.TextValue textValue7 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue8 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue9 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue10 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue11 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue12 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue1 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue2 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue3 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue4 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue5 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue6 = new MyUI.PLC_MultiStateDisplay.TextValue();
             this.plC_ScreenPage_Main = new MyUI.PLC_ScreenPage();
             this.領藥作業 = new System.Windows.Forms.TabPage();
             this.rJ_GroupBox4 = new MyUI.RJ_GroupBox();
@@ -284,6 +284,7 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.rJ_GroupBox3 = new MyUI.RJ_GroupBox();
             this.plC_RJ_GroupBox13 = new MyUI.PLC_RJ_GroupBox();
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_儲位管理_儲位資訊_修正批號 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_儲位管理_儲位資訊_修正庫存 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_儲位管理_儲位資訊_新增效期 = new MyUI.PLC_RJ_Button();
@@ -536,7 +537,6 @@
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存 = new MyUI.PLC_RJ_Button();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.領藥作業.SuspendLayout();
             this.rJ_GroupBox4.ContentsPanel.SuspendLayout();
@@ -1203,48 +1203,48 @@
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.TabIndex = 7;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.字體顏色 = System.Drawing.Color.Black;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.文字對齊位置 = System.Drawing.ContentAlignment.TopLeft;
-            textValue7.Name = "M4000";
-            textValue7.Text = "請登入身分...";
-            textValue7.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue7.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue7.文字顏色 = System.Drawing.Color.Black;
-            textValue7.自定義參數 = false;
-            textValue8.Name = "M4001";
-            textValue8.Text = "登入者姓名 : XXX";
-            textValue8.字體 = new System.Drawing.Font("微軟正黑體", 30F);
-            textValue8.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue8.文字顏色 = System.Drawing.Color.Black;
-            textValue8.自定義參數 = true;
-            textValue9.Name = "M4002";
-            textValue9.Text = "登入失敗,查無此資料!";
-            textValue9.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue9.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue9.文字顏色 = System.Drawing.Color.Red;
-            textValue9.自定義參數 = false;
-            textValue10.Name = "M4005";
-            textValue10.Text = "請選擇領/退藥";
-            textValue10.字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
-            textValue10.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue10.文字顏色 = System.Drawing.Color.Red;
-            textValue10.自定義參數 = false;
-            textValue11.Name = "M4006";
-            textValue11.Text = "此藥單已領用過!";
-            textValue11.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue11.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue11.文字顏色 = System.Drawing.Color.Red;
-            textValue11.自定義參數 = false;
-            textValue12.Name = "M4007";
-            textValue12.Text = "掃碼失敗!";
-            textValue12.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            textValue12.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue12.文字顏色 = System.Drawing.Color.Red;
-            textValue12.自定義參數 = false;
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue7);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue8);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue9);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue10);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue11);
-            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue12);
+            textValue1.Name = "M4000";
+            textValue1.Text = "請登入身分...";
+            textValue1.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            textValue1.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue1.文字顏色 = System.Drawing.Color.Black;
+            textValue1.自定義參數 = false;
+            textValue2.Name = "M4001";
+            textValue2.Text = "登入者姓名 : XXX";
+            textValue2.字體 = new System.Drawing.Font("微軟正黑體", 30F);
+            textValue2.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue2.文字顏色 = System.Drawing.Color.Black;
+            textValue2.自定義參數 = true;
+            textValue3.Name = "M4002";
+            textValue3.Text = "登入失敗,查無此資料!";
+            textValue3.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            textValue3.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue3.文字顏色 = System.Drawing.Color.Red;
+            textValue3.自定義參數 = false;
+            textValue4.Name = "M4005";
+            textValue4.Text = "請選擇領/退藥";
+            textValue4.字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
+            textValue4.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue4.文字顏色 = System.Drawing.Color.Red;
+            textValue4.自定義參數 = false;
+            textValue5.Name = "M4006";
+            textValue5.Text = "此藥單已領用過!";
+            textValue5.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            textValue5.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue5.文字顏色 = System.Drawing.Color.Red;
+            textValue5.自定義參數 = false;
+            textValue6.Name = "M4007";
+            textValue6.Text = "掃碼失敗!";
+            textValue6.字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            textValue6.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue6.文字顏色 = System.Drawing.Color.Red;
+            textValue6.自定義參數 = false;
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue1);
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue2);
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue3);
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue4);
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue5);
+            this.plC_MultiStateDisplay_領藥台_01_狀態顯示.狀態內容.Add(textValue6);
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.背景顏色 = System.Drawing.Color.SkyBlue;
             this.plC_MultiStateDisplay_領藥台_01_狀態顯示.顯示字體 = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             // 
@@ -4389,7 +4389,7 @@
             this.panel60.Controls.Add(this.label17);
             this.panel60.Location = new System.Drawing.Point(246, 199);
             this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(237, 36);
+            this.panel60.Size = new System.Drawing.Size(323, 36);
             this.panel60.TabIndex = 6;
             // 
             // textBox_藥品資料_藥檔資料_藥品條碼
@@ -4410,7 +4410,7 @@
             this.textBox_藥品資料_藥檔資料_藥品條碼.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBox_藥品資料_藥檔資料_藥品條碼.PlaceholderText = "";
             this.textBox_藥品資料_藥檔資料_藥品條碼.ShowTouchPannel = false;
-            this.textBox_藥品資料_藥檔資料_藥品條碼.Size = new System.Drawing.Size(115, 34);
+            this.textBox_藥品資料_藥檔資料_藥品條碼.Size = new System.Drawing.Size(201, 34);
             this.textBox_藥品資料_藥檔資料_藥品條碼.TabIndex = 112;
             this.textBox_藥品資料_藥檔資料_藥品條碼.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBox_藥品資料_藥檔資料_藥品條碼.Texts = "";
@@ -6518,6 +6518,49 @@
             this.plC_RJ_GroupBox13.TitleHeight = 37;
             this.plC_RJ_GroupBox13.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.plC_RJ_GroupBox13.TitleTexts = "效期管理";
+            // 
+            // plC_RJ_Button_儲位管理_儲位資訊_新增庫存
+            // 
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.AutoResetState = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Bool = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderRadius = 5;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.but_press = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Location = new System.Drawing.Point(465, 163);
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Name = "plC_RJ_Button_儲位管理_儲位資訊_新增庫存";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字內容 = "新增庫存";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_BorderSize = 5;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字內容 = "新增庫存";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.State = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.TabIndex = 132;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Text = "新增庫存";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Texts = "新增庫存";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.字型鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.文字鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.致能讀取位置 = "S39012";
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.讀取位元反向 = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.讀寫鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.音效 = true;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.顯示 = false;
+            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.顯示狀態 = false;
             // 
             // plC_RJ_Button_儲位管理_儲位資訊_修正批號
             // 
@@ -14138,49 +14181,6 @@
             this.plC_AlarmFlow1.自動隱藏 = false;
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = false;
-            // 
-            // plC_RJ_Button_儲位管理_儲位資訊_新增庫存
-            // 
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.AutoResetState = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Bool = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderRadius = 5;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.BorderSize = 0;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.but_press = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Location = new System.Drawing.Point(465, 163);
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Name = "plC_RJ_Button_儲位管理_儲位資訊_新增庫存";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字內容 = "新增庫存";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_BorderSize = 5;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字內容 = "新增庫存";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Size = new System.Drawing.Size(111, 44);
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.State = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.TabIndex = 132;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Text = "新增庫存";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.Texts = "新增庫存";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.字型鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.文字鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.致能讀取位置 = "S39012";
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.讀取位元反向 = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.讀寫鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.音效 = true;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.顯示 = false;
-            this.plC_RJ_Button_儲位管理_儲位資訊_新增庫存.顯示狀態 = false;
             // 
             // Form1
             // 
