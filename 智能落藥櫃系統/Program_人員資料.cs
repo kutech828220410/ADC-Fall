@@ -16,25 +16,12 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 using MySQL_Login;
 using H_Pannel_lib;
-
+using HIS_DB_Lib;
 namespace 智能落藥櫃系統
 {
     public partial class Form1 : Form
     {
-        public enum enum_人員資料
-        {
-            GUID,
-            ID,
-            姓名,
-            性別,
-            密碼,
-            單位,
-            權限等級,
-            顏色,
-            卡號,
-            一維條碼,
-            識別圖案,
-        }
+
         public enum enum_人員資料_匯出
         {
             ID,

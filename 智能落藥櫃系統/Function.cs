@@ -39,21 +39,22 @@ namespace 智能落藥櫃系統
         public void Function_從SQL取得儲位到入賬資料(string 藥品碼)
         {
             List<object> list_value = new List<object>();
-     
-            List<RowsDevice> rowsDevices = this.List_RowsLED_雲端資料.SortByCode(藥品碼);
-            List<string> IPs = (from temp in rowsDevices
-                                select temp.IP).Distinct().ToList();
+            this.List_RowsLED_入賬資料 = this.rowsLEDUI.SQL_GetAllRowsLED();
+            this.List_RowsLED_雲端資料 = this.rowsLEDUI.SQL_GetAllRowsLED();
+            //List<RowsDevice> rowsDevices = this.List_RowsLED_雲端資料.SortByCode(藥品碼);
+            //List<string> IPs = (from temp in rowsDevices
+            //                    select temp.IP).Distinct().ToList();
 
-            List<RowsLED> rowsLeds_buf = new List<RowsLED>();
-            for (int i = 0; i < IPs.Count; i++)
-            {
-                RowsLED rowsLED = this.rowsLEDUI.SQL_GetRowsLED(IPs[i]);
-                rowsLeds_buf = (from temp in this.List_RowsLED_入賬資料
-                                where temp.IP == rowsLED.IP
-                                select temp).ToList();
-                if (rowsLeds_buf.Count == 0) List_RowsLED_入賬資料.Add(rowsLED);
-                else rowsLeds_buf[0] = rowsLED;
-            }
+            //List<RowsLED> rowsLeds_buf = new List<RowsLED>();
+            //for (int i = 0; i < IPs.Count; i++)
+            //{
+            //    RowsLED rowsLED = this.rowsLEDUI.SQL_GetRowsLED(IPs[i]);
+            //    rowsLeds_buf = (from temp in this.List_RowsLED_入賬資料
+            //                    where temp.IP == rowsLED.IP
+            //                    select temp).ToList();
+            //    if (rowsLeds_buf.Count == 0) List_RowsLED_入賬資料.Add(rowsLED);
+            //    else rowsLeds_buf[0] = rowsLED;
+            //}
   
          
         }
@@ -93,7 +94,7 @@ namespace 智能落藥櫃系統
         public List<object> Function_從入賬資料取得儲位(string 藥品碼)
         {
             List<object> list_value = new List<object>();
-    
+            this.List_RowsLED_入賬資料= this.rowsLEDUI.SQL_GetAllRowsLED();
             List<RowsDevice> rowsDevices = this.List_RowsLED_入賬資料.SortByCode(藥品碼);
            
             for (int i = 0; i < rowsDevices.Count; i++)
